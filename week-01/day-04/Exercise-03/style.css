@@ -1,0 +1,25 @@
+.container {
+  width: 350px;
+  height: 256px;
+  border: 15px solid #4285F4;
+  margin: 5px;
+}
+
+.box {
+  height: 50%;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 36px;
+  color: #fff;
+  background: #000;
+}
+
+.box.pink {
+  background: #E47778;
+}
+
+.box.green {
+  background: #ABE6E5;
+}

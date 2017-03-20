@@ -1,0 +1,20 @@
+h1 {
+color: #0009e5;
+}
+
+h2 {
+  color: #fcae24;
+}
+
+.blue {
+  color: blue;
+  list-style-type: square;
+}
+
+.red {
+  color: red;
+}
+
+.dot {
+  list-style-type: disc;
+}

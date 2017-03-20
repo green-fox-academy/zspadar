@@ -1,0 +1,11 @@
+.container {
+  font-size: 18px;
+  height: 518px;
+  width: 337px;
+  text-align: left;
+}
+
+p {
+border-left: 2px solid #000;
+padding: 0 0 0 20px;
+}

@@ -1,0 +1,98 @@
+
+body {
+  color: #333;
+  font-family: "Merriweather", serif;
+  margin: 0;
+}
+
+header {
+  background-image:url(anakin.png);
+  background-position: auto;
+  background-size: contain;
+  height: 400px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 28px;
+}
+
+.introduction {
+  padding-top: 280px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  max-width: 711px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2 {
+text-indent: 16px;
+text-align: center bottom;
+margin: 0;
+padding: 0 200px 10px 300px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3,
+h4 {
+  font-size: 20px
+  font-weight: 500;
+}
+
+h3 {
+ letter-spacing: 5px;
+ text-transform: uppercase;
+ padding-bottom: 20px;
+}
+
+.details {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+blockquote {
+  background-color: #444;
+  color: #faf0f0;
+  font-size: 36px;
+  text-align: left center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+}
+ blockquote:hover {
+   color: #6495ed;
+   border-radius: 5px;
+   transition: color .5s;
+ }
+
+li {
+  list-style:square outside;
+  text-indent: 16px;
+  font-size: 14px;
+}
+
+.workplace,
+.school {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.activity,
+.title {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 18px;
+}

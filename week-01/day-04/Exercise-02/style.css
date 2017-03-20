@@ -1,0 +1,34 @@
+.container {
+  width: 350px;
+  height: 515px;
+  border: 16px solid #4688f1;
+
+}
+
+.box {
+  height: 25%;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 36px;
+  color: #fff;
+  background: #000;
+  line-height: 3.5em;
+}
+
+.box.pink {
+  background: #e47778;
+}
+
+.box.yellow {
+  background: #f2ee6d;
+}
+
+.box.green {
+  background: #abe6e5;
+}
+
+.box.blue {
+  background: #7794e1;
+}

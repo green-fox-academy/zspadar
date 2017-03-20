@@ -1,0 +1,16 @@
+
+
+.box {
+  margin: 15px;
+  padding: 20px;
+  border:10px solid #67C986;
+  width: 328px;
+  height: 112px;
+  background-color: #0D91A1;
+}
+
+div {
+  color: #005566;
+  font-size: 2rem;
+  font-family: sans-serif;
+}

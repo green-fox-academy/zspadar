@@ -1,0 +1,21 @@
+
+body {
+  font-weight: bold;
+}
+
+.big {
+  color: blue;
+}
+
+p {
+  background-color: yellow;
+  display: inline-block;
+  font-weight: normal;
+}
+
+#b325,
+.b326 {
+  height: 15px;
+  width: 170px;
+  border: 1px solid green;
+}

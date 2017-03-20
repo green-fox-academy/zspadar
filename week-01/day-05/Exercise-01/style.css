@@ -1,0 +1,21 @@
+
+p {
+border: 1px solid #000;
+padding: 20px;
+margin: 0;
+font-size: 18px;
+width: 337px;
+}
+
+article p:first-child {
+  border-top-color: #fff;
+}
+
+article p:last-child {
+border-bottom-color: #fff;
+}
+
+p:hover {
+  background-color: #ec6842;
+  transition: color .5s;
+}
