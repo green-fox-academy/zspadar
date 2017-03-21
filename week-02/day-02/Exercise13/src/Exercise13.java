@@ -25,7 +25,7 @@ public class Exercise13 {
 
 
     int e = 8;
-    e = e^3;
+    e = e * e * e;
 
 
     System.out.println(e);
@@ -52,7 +52,7 @@ public class Exercise13 {
 
     int i1 = 10;
     int i2 = 3;
-    System.out.println( i1 > (i2^2) && i1 < (i2^3));
+    System.out.println( i1 > (i2 * i2) && i1 < (i2 * i2 * i2));
     // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
 
 
