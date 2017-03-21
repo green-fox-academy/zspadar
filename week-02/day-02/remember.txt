@@ -1,0 +1,1 @@
+command+shift+space is for auto completion
