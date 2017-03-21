@@ -16,6 +16,6 @@ public class Exercise16 {
     int pig = scanner.nextInt();
 
     System.out.println("The farmer has " + (chicken * 2 + pig * 4) + " legs.");
-    
+
   }
 }
