@@ -12,10 +12,16 @@ public class Exercise28 {
 
 
     for (int i = 1; i <= (c + 1); i = (i + 2)) {
-      for (int j = 1; j < ((c - i) / 2) + 1; j += 1) {
+      for (int j = 0; j < (((c - i) / 2) + 1); j ++) {
         System.out.print(" ");
       }
-      System.out.println("*");
+      for (int j = 0; j < i; j++) {
+        System.out.print("*");
+      }
+      for (int j = 0; j < (((c - i) / 2) + 1); j ++) {
+        System.out.print(" ");
+      }
+      System.out.println(" ");
     }
   }
 }
