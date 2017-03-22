@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.functions.FuncFalse;
+
 /**
  * Created by zsuzsanna.padar on 2017. 03. 22..
  */
@@ -20,12 +22,12 @@ public class Exercise22 {
     int b = 13;
     String out2 = "";
 
-    if ( b <= 20 && b >= 10) {
+    if ( (b <= 20 ) &&  (b >= 10)) {
        out2 = "Sweet!" ;
     } else if ( b < 10 ) {
        out2 = "More!";
     } else if (b > 20) {
-      out2 = "Less!"
+      out2 = "Less!";
     }
     // if b is between 10 and 20 set out2 to "Sweet!"
     // if less than 10 set out2 to "More!",
@@ -38,12 +40,19 @@ public class Exercise22 {
 
     int c = 123;
     int credits = 100;
-    boolean isBonus = False;
+    boolean isBonus = false;
     // if credits are at least 50,
     // and isBonus is false decrement c by 2
     // if credits are smaller than 50,
     // and isBonus is false decrement c by 1
     // if isBonus is true c should remain the same
+    if (credits >= 50 && isBonus == false) {
+      c -= 2;
+    } else if (credits < 50 && isBonus == false) {
+      c -= 1;
+    } else if (isBonus == true) {
+      c = c;
+    }
 
 
     System.out.println(c);
@@ -60,6 +69,13 @@ public class Exercise22 {
     // if time is more than 200
     // set out3 to "Time out"
     // otherwise set out3 to "Run Forest Run!"
+    if (( d % 4 == 0) && (time <= 200)) {
+      out3 = "check";
+    } else if (time > 200) {
+      out3 = "Time out";
+    } else {
+      out3 = "Run Forest Run";
+    }
 
 
     System.out.println(out3);
