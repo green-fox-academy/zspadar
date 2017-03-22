@@ -9,8 +9,16 @@ public class Exercise25 {
 
     System.out.println("Please give me a number!");
     int ui1 = scanner.nextInt();
-    System.out.println("Please, give mi another number!");
+    System.out.println("Please, give me another number!");
     int ui2 = scanner.nextInt();
+
+    if (ui1 <= ui2) {
+      System.out.println("The second number should be bigger!");
+    } else {
+      for (int i = ui1; i > ui2; i--) {
+        System.out.println(i);
+      }
+    }
   }
 }
 // Create a program that asks for two numbers
