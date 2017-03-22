@@ -13,9 +13,14 @@ public class Exercise20 {
     System.out.println("Please give me another number!");
     int userinput2 = scanner.nextInt();
 
-    if (userinput1 > userinput2 || userinput2 < userinput1) {
-      System.out.println();
+    if (userinput1 > userinput2 ) {
+      System.out.println("The bigger number is: " + userinput1);
+    } else if (userinput2 < userinput1) {
+        System.out.println("The bigger number is: " + userinput2);
+    } else {
+          System.out.println("The two numbers are equal!!!");
+        }
+      }
     }
-  }
-}
+
 // Write a program that asks for two numbers and prints the bigger one
