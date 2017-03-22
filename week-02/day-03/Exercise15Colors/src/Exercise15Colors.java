@@ -3,10 +3,11 @@
  */
 public class Exercise15Colors {
   public static void main(String[] arg) {
-    int [] green = {"lime", "forrest green", "olive", "pale green", "spring green"};
-    int [] red = {"orange red", "red", "tomato"};
-    int [] pink = {"orchid", "violet", "pink", "hot pink"};
+    int color [] [] = {{"lime", "forrest green", "olive", "pale green", "spring green"}, {"orange red", "red", "tomato"},
+    {"orchid", "violet", "pink", "hot pink"}};
     
+
+
   }
 }
 // - Create a two dimensional array
