@@ -2,6 +2,12 @@
  * Created by zsuzsanna.padar on 2017. 03. 22..
  */
 public class Exercise15Colors {
+  public static void main(String[] arg) {
+    int [] green = {"lime", "forrest green", "olive", "pale green", "spring green"};
+    int [] red = {"orange red", "red", "tomato"};
+    int [] pink = {"orchid", "violet", "pink", "hot pink"};
+    
+  }
 }
 // - Create a two dimensional array
 //   which can contain the different shades of specified colors
