@@ -15,12 +15,11 @@ public class Exercise20 {
 
     if (userinput1 > userinput2 ) {
       System.out.println("The bigger number is: " + userinput1);
-    } else if (userinput2 < userinput1); {
-        System.out.println("The bigger number is: " + userinput2);
+    } else if (userinput2 > userinput1) {
+      System.out.println("The bigger number is: " + userinput2);
     } else {
-          System.out.println("The two numbers are equal!!!");
-        }
-      }
+      System.out.println("The two numbers are equal!!!");
     }
+  }
+}
 
-// Write a program that asks for two numbers and prints the bigger one
