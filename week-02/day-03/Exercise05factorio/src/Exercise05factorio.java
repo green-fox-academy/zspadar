@@ -13,7 +13,7 @@ public class Exercise05factorio {
   public static int factorio (int numbers) {
     int result = 1;
     for (int i = 1; i < numbers + 1; i++) {
-      result = result * i;
+      result = numbers * i;
     }
     return result;
   }

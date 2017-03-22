@@ -7,37 +7,20 @@ public class Exercise29 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Please give me a number!");
+    System.out.println("Please give me an ODD number!");
     int c = scanner.nextInt();
 
 
-    for (int i = 0; i < c + 1; i ++) {
-      for (int j = 0; j < c; j++) {
+    for (int i = 0; i < c / 2 + 1; i ++) {
+      for (int j = 0; j < c / 2 - i; j ++) {
         System.out.print(" ");
       }
-      for (int j = 0; j < i; j++) {
+      for (int s = 0; s < i * 2 +1; s++) {
         System.out.print("*");
-      }
-
-      for (int j = 0; j < i ; j++) {
-        System.out.print(" ");
-      }
-      System.out.println();
-    }
-    for (int i = (c - 1); i > 0; i --) {
-      for (int j = 0; j < c; j++)  {
-        System.out.print(" ");
-      }
-      for (int j = 0; j < i; j++) {
-        System.out.print("*");
-      }
-      for (int j = 0; j < c; j++) {
-        System.out.print(" ");
       }
       System.out.println();
     }
   }
 }
-
 
 
