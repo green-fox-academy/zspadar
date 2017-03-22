@@ -3,9 +3,10 @@
  */
 public class Exercise15Colors {
   public static void main(String[] arg) {
-    int color [] [] = {{"lime", "forrest green", "olive", "pale green", "spring green"}, {"orange red", "red", "tomato"},
+    String color [] [] = {{"lime", "forrest green", "olive", "pale green", "spring green"}, {"orange red", "red", "tomato"},
     {"orchid", "violet", "pink", "hot pink"}};
-    
+
+
 
 
   }
