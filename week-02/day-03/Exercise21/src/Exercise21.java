@@ -15,14 +15,13 @@ public class Exercise21 {
     System.out.println("How many boys attended the part?");
     int boys = scanner.nextInt();
 
-    if ( (girls == boys)  && ( girls + boys ) > 20 ) {
+    if ((girls == boys)  && ( girls + boys ) > 20 ) {
       System.out.println("The party is excellent!");
-    } else if ((( boys > girls) || (girls > boys) ) && (( girls + boys) > 20)) {
+    } else if (((girls + boys) > 20) && (girls != boys)) {
       System.out.println("Quite cool party!");
-    } else if ( (girls + boys) < 20) {
+    } else if ((girls + boys) < 20 && (girls >= 1) ) {
       System.out.println("Average party...");
-    }
-    else if (girls == 0) {
+    } else if (girls == 0) {
       System.out.println("Sausage party");
     }
   }
