@@ -6,6 +6,7 @@ public class UrlFixer {
     String url = "https//www.reddit.com/r/nevertellmethebots";
 
     url = url.replace("bot", "odd");
+    url = url.replace("https//", "https//:");
 
 
     // Accidentally I got the wrong URL for a funny subreddit. It's probably "odds" and not "bots"
