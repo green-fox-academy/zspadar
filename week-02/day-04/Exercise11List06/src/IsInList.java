@@ -7,7 +7,12 @@ public class IsInList{
   public static void main(String... args){
     ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(2, 4, 6, 8, 10, 12, 14, 16));
 
-    if (list.containsAll(new ArrayList<Integer>(Arrays.asList(4,8,12,16)))) {
+    /*if (list.containsAll(new ArrayList<Integer>(Arrays.asList(4,8,12,16)))) {
+      System.out.println("true");
+    } else {
+      System.out.println("false");
+    } */
+    if (list.indexOf(4) != -1 && list.indexOf(8) != -1 && list.indexOf(12) != -1 && list.indexOf(16) != -1 ) {
       System.out.println("true");
     } else {
       System.out.println("false");
