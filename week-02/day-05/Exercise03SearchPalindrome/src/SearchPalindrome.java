@@ -9,9 +9,9 @@ public class SearchPalindrome {
   }
   public static String searchPalindrome(String parts) {
     for (int i = 0; i < parts.length(); i++) {
-      public static Boolean searchPalindrome(String particle) {
+      public static Boolean searchPalindrome(String parts) {
         return (parts.indexOf(searchPalindrome([i], parts.length())) &&
-        parts.equals(new StringBuffer(parts).reverse().toString()));
+        parts.equals(new StringBuilder(parts).reverse().toString()));
       }
       return parts;
     }
