@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Created by zsuzsanna.padar on 2017. 03. 27..
@@ -13,19 +14,26 @@ public class ReversedLines {
     try {
       Path path = Paths.get("reversed-lines.txt");
       List<String> lines = Files.readAllLines(path);
-      System.out.println(reverse(lines));
-    }catch (IOException ex) {
+      mirroLines(lines);
+    } catch (IOException ex) {
       System.out.println("Unable to read!");
     }
     System.out.println("Readable!");
   }
 
-
-  public static List<String> reverse (List<String> sentence){
-    ArrayList<String> reversedSentence = new ArrayList<>();
-    for (int i = sentence.size() - 1; i >= 0; i--) {
-      reversedSentence.add(sentence.get(i));
+  public static void mirroLines (List<String> reflect) {
+    for (int i = 0 ; i < reflect.size() ; i ++) {
+      System.out.println(new StringBuilder(reflect.get(i)).reverse().toString());
     }
-    return reversedSentence;
   }
+
+
+
+  /*public static List<String> reverse (List<String> changeOrderinLines) {
+    ArrayList <String> changeOrderInLines = new ArrayList<>();
+    for (int i = changeOrderInLines.size() - 1; i <= changeOrderInLines.size(); i--) {
+      changeOrderinLines.add(changeOrderInLines.get(i));
+    }
+    return changeOrderInLines;
+  } */
 }
