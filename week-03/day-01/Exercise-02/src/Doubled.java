@@ -11,7 +11,6 @@ import java.util.List;
 public class Doubled {
   public static void main(String[] args) {
     try {
-      ArrayList<String> duplicatedChars = new ArrayList<>();
       Path path = Paths.get("duplicated_chars.txt");
       List<String> lines = Files.readAllLines(path);
       System.out.println(remove(lines));
@@ -24,8 +23,8 @@ public class Doubled {
     String nonDuplicated = new String();
       for (int i = 0; i < lines.size(); i++) {
         for (int j = 0; j < lines.get(i).length(); j+=2) {
-        nonDuplicated = nonDuplicated + lines.get(i).charAt(j);
-      }
+          nonDuplicated = nonDuplicated + lines.get(i).charAt(j);
+        }
         nonDuplicated = nonDuplicated + "\n";
     }return nonDuplicated;
 
