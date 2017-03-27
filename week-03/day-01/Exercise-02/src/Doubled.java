@@ -16,16 +16,19 @@ public class Doubled {
       List<String> lines = Files.readAllLines(path);
       System.out.println(remove(lines));
     } catch (IOException ex) {
-
+      System.out.println("Unable to read");
     }
   }
+
   public static String remove (List<String> lines) {
     String nonDuplicated = new String();
       for (int i = 0; i < lines.size(); i++) {
         for (int j = 0; j < lines.get(i).length(); j+=2) {
         nonDuplicated = nonDuplicated + lines.get(i).charAt(j);
       }
+        nonDuplicated = nonDuplicated + "\n";
     }return nonDuplicated;
+
   }
 }
 
