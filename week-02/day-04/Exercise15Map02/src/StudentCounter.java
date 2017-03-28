@@ -47,11 +47,11 @@ public class StudentCounter {
     row5.put("candies", 2);
     map.add( row5 );
 
-    for (int i = 0; i < map.size(); i++) {
-      if ( (map.get(i).get("candies") > 4 ) {
+
+
+   for (int i = 0; i < map.size(); i++) {
+      if ( (Integer)map.get(i).get("candies") > 4 ) {
         System.out.println(map.get(i).get("name"));
-      } else {
-        System.out.println(map.get(i).get);
       }
     }
 
