@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
+import static com.sun.tools.doclint.Entity.sum;
 
 /**
  * Created by zsuzsanna.padar on 2017. 03. 28..
@@ -47,13 +50,18 @@ public class StudentCounter {
     row5.put("candies", 2);
     map.add( row5 );
 
+    double sum = 0;
 
 
-   for (int i = 0; i < map.size(); i++) {
-      if ( (Integer)map.get(i).get("candies") > 4 ) {
-        System.out.println(map.get(i).get("name"));
-      }
-    }
+    for (int i = 0; i < map.size(); i++) {
+     if ((Integer) map.get(i).get("candies") > 4) {
+       System.out.println(map.get(i).get("name"));
+     }
+     if ((Integer) map.get(i).get("candies") < 5) {
+       System.out.println(sum = sum + Double.valueOf(map.get(i).get("age").toString()));
+     }
+   }
+
 
     // Display the following things:
     //  - Who has got more candies than 4 candies

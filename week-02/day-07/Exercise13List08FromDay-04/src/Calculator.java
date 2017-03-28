@@ -9,10 +9,10 @@ public class Calculator {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please, type in an expression!");
-   // ArrayList<String> = new ArrayList<>(Arrays.asList(scanner.nextInt()));
+    ArrayList<String>  = new ArrayList<>(Arrays.asList(scanner.nextInt()));
     int userInput = scanner.nextInt();
-    switch (userInput = {operation, operand1, operand2}) {
-    }
+
+    userInput  = {operation, operand1, operand2};
 
     if (operation != "*") {
       if (operation == "/") {
