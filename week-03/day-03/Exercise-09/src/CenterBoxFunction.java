@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * Created by zsuzsanna.padar on 2017. 03. 29..
  */
 public class CenterBoxFunction {
-  public static void mainDraw(Graphics graphics){
+  public static void mainDraw(Graphics graphics) {
     // create a square drawing function that takes 1 parameter:
     // the square size
     // and draws a square of that size to the center of the canvas.

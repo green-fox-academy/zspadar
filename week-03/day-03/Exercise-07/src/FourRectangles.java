@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * Created by zsuzsanna.padar on 2017. 03. 29..
  */
 public class FourRectangles {
-  public static void mainDraw(Graphics graphics){
+  public static void mainDraw(Graphics graphics) {
     // draw four different size and color rectangles.
     graphics.setColor(Color.GREEN);
     graphics.fillPolygon(new int[] {4, 16, 20}, new int[] {0, 20, 20}, 3);
@@ -31,7 +31,7 @@ public class FourRectangles {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-  static class ImagePanel extends JPanel{
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);

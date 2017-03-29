@@ -14,7 +14,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * Created by zsuzsanna.padar on 2017. 03. 29..
  */
 public class RainbowBoxFunction {
-  public static void mainDraw(Graphics graphics){
+  public static void mainDraw(Graphics graphics) {
     // create a square drawing function that takes 2 parameters:
     // the square size, and the fill color,
     // and draws a square of that size and color to the center of the canvas.
@@ -43,7 +43,7 @@ public class RainbowBoxFunction {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-  static class ImagePanel extends JPanel{
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
