@@ -11,8 +11,14 @@ public class PurpleSteps {
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps/r3.png]
     graphics.setColor(Color.BLACK);
-    for (int i = 0; i < 300; i += 10) {
-      graphics.fillRect(i, i, 11, 11);
+    for (int i = 0; i < 300; i += 16) {
+      graphics.fillRect(i, i, 16, 16);
+
+    }
+
+    graphics.setColor(Color.MAGENTA);
+    for (int i = 0; i < 300; i += 16) {
+      graphics.fillRect(i, i, 14, 14);
     }
 
 
