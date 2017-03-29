@@ -9,9 +9,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CenteredSquare {
   public static void mainDraw(Graphics graphics){
     // draw a green 10x10 square to the canvas' center.
-
-
-
+    graphics.setColor(Color.GREEN);
+    graphics.fillRect(145,145,10,10);
   }
 
   //    Don't touch the code below
