@@ -10,19 +10,19 @@ public class PurpleSteps3D {
   public static void mainDraw(Graphics graphics){
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps-3d/r4.png]
-    twoSqauaresInTwoColors3D(16, graphics);
+    twoSquaresInTwoColors3D(16, graphics);
   }
 
-  public static void twoSqauaresInTwoColors3D (int square, Graphics graphics) {
+  public static void twoSquaresInTwoColors3D (int square, Graphics graphics) {
     int xy = 0;
-    for (int i = 0; i < 300; i += square) {
+    for (int i = 0; i < 300; i += (square -square / 2 )) {
       int coordinates = xy + i;
       graphics.setColor(Color.BLACK);
       graphics.fillRect(coordinates, coordinates, square, square);
       graphics.setColor(Color.MAGENTA);
-      graphics.fillRect(coordinates + 1, coordinates +1,square - 2, square - 2);
+      graphics.fillRect(coordinates + 1, coordinates + 1,square - 2, square - 2);
       square += square;
-      coordinates += square;
+      //coordinates -= square;
     }
   }
 
