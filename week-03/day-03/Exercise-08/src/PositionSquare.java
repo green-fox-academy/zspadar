@@ -14,7 +14,7 @@ public class PositionSquare {
     // draw 3 squares with that function.
     drawSquare(0,0, graphics);
     drawSquare(55,55, graphics);
-    
+    drawSquare(10,180, graphics);
 
 
 
