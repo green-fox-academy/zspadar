@@ -25,9 +25,9 @@ public class LinePlayQuarters {
     graphics.drawLine(150, diff + 150, diff + 150, 300);
     graphics.setColor(Color.MAGENTA);
     graphics.drawLine( diff, 0, 150, diff );
-    //graphics.drawLine();
-    //graphics.drawLine();
-    //graphics.drawLine();
+    graphics.drawLine(150 + diff, 0, 300, diff);
+    graphics.drawLine(diff, 150, 150, 150 + diff);
+    graphics.drawLine(150 + diff, 150, 300, 150 + diff);
   }
 
 
