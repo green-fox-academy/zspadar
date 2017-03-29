@@ -10,6 +10,11 @@ public class PurpleSteps {
   public static void mainDraw(Graphics graphics) {
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps/r3.png]
+    graphics.setColor(Color.BLACK);
+    for (int i = 0; i < 300; i += 10) {
+      graphics.fillRect(i, i, 11, 11);
+    }
+
 
 
 
