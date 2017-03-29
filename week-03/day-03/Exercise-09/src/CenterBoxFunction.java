@@ -13,9 +13,8 @@ public class CenterBoxFunction {
     // and draws a square of that size to the center of the canvas.
     // draw 3 squares with that function.
     drawSquare(40, graphics);
-
-
-
+    drawSquare(70, graphics);
+    drawSquare(180, graphics);
   }
 
   public static void drawSquare(int sizexy, Graphics graphics) {
@@ -33,7 +32,7 @@ public class CenterBoxFunction {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-  static class ImagePanel extends JPanel{
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
