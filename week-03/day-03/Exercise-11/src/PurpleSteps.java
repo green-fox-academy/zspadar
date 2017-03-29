@@ -10,11 +10,8 @@ public class PurpleSteps {
   public static void mainDraw(Graphics graphics) {
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps/r3.png]
+    twoSqauaresInTwoColors(16, graphics);
 
-    graphics.setColor(Color.BLACK);
-    graphics.fillRect(0,0, 16, 16);
-    graphics.setColor(Color.MAGENTA);
-    graphics.fillRect(1, 1, 14, 14);
 
     /*graphics.setColor(Color.BLACK);
     for (int i = 0; i < 300; i += 16) {
@@ -27,10 +24,15 @@ public class PurpleSteps {
       graphics.fillRect(i, i, 14, 14);
     } */
 
-
-
-
-
+  }
+  public static void twoSqauaresInTwoColors (int square, Graphics graphics) {
+    int xy = 0;
+    for (int i = 0; i < 300; i +=square) {
+      graphics.setColor(Color.BLACK);
+      graphics.fillRect(xy + i, xy + i, square, square);
+      graphics.setColor(Color.MAGENTA);
+      graphics.fillRect(xy + i + 1, xy + i +1,square - 2, square - 2);
+    }
   }
 
   //    Don't touch the code below
