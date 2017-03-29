@@ -15,10 +15,8 @@ public class PositionSquare {
     drawSquare(0,0, graphics);
     drawSquare(55,55, graphics);
     drawSquare(10,180, graphics);
-
-
-
   }
+  
   public static void drawSquare(int x, int y, Graphics graphics) {
     graphics.fillRect(x, y, 50, 50);
   }
