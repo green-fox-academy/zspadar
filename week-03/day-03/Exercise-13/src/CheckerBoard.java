@@ -10,20 +10,24 @@ public class CheckerBoard {
   public static void mainDraw(Graphics graphics) {
     // fill the canvas with a checkerboard pattern.
     chessPattern( 15, graphics);
-
-
   }
+  
   public static void chessPattern(int squaresize, Graphics graphics) {
     //int xy = 0;
     for (int i = 0; i < 300; i += squaresize) {
       for (int j = 0; j < 300; j += (2 * squaresize)) {
-        if (i % (2 * squaresize) == 0 && j % (2 * squaresize) == 0 || i % (2 * squaresize) != 0 && j % (2 * squaresize) != 0) {
+        if (i % (2 * squaresize) == 0) {
           graphics.setColor(Color.BLACK);
           graphics.fillRect(j, i, squaresize, squaresize);
-        } else {
           graphics.setColor(Color.YELLOW);
           graphics.fillRect(j + squaresize , i  , squaresize, squaresize);
-          //xy += xy;
+        } else {
+          if (j % (2 * squaresize) == 0 ) {
+            graphics.setColor(Color.YELLOW);
+            graphics.fillRect(j, i, squaresize, squaresize);
+            graphics.setColor(Color.BLACK);
+            graphics.fillRect(j + squaresize , i  , squaresize, squaresize);
+          }
         }
       }
     }
