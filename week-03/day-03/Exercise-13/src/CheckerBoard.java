@@ -11,7 +11,7 @@ public class CheckerBoard {
     // fill the canvas with a checkerboard pattern.
     chessPattern( 15, graphics);
   }
-  
+
   public static void chessPattern(int squaresize, Graphics graphics) {
     //int xy = 0;
     for (int i = 0; i < 300; i += squaresize) {
