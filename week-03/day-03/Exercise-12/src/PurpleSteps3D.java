@@ -22,7 +22,6 @@ public class PurpleSteps3D {
       graphics.setColor(Color.MAGENTA);
       graphics.fillRect(coordinates + 1, coordinates + 1,square - 2, square - 2);
       square += square;
-      //coordinates -= square;
     }
   }
 
