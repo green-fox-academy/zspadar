@@ -18,8 +18,8 @@ public class YellowStuff {
       for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
           if (i % 2 == 0 && j % 2 == 0) {
-            graphics.setColor(Color.MAGENTA);
-            graphics.fillRect(size / 3 * j + x, size / 3 * j + y, size / 3, size / 3);
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(size / 3 * j + x, size / 3 * i + y, size / 3, size / 3);
           } else {
             drawYellowRects(size / 3 * j + x, size / 3 * i + y, size / 3, n-1, graphics);
           }
