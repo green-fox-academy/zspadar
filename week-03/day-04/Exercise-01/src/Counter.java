@@ -5,7 +5,7 @@ public class Counter {
   public static void main(String[] args) {
    countDown(11);
   }
-  
+
   public static  void countDown(int n) {
     if (n == 0) {
       return;
