@@ -3,7 +3,7 @@
  */
 public class StringLowercase {
   public static void main(String[] args) {
-    System.out.println(lowerCaseXToY("Bxtxasx"));
+    System.out.println(lowerCaseXToY("BXtxasx"));
   }
 
   public static String lowerCaseXToY(String word) {
