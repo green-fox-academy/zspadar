@@ -6,27 +6,18 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by zsuzsanna.padar on 2017. 03. 30..
  */
-public class YellowStuff {
+public class Triangle {
   public static void mainDraw(Graphics graphics) {
 
-    drawYellowRects(0, 0, 300,  4, graphics);
-    }
+    graphics.setColor(Color.BLACK);
+    graphics.drawLine(0, 300,150,0);
+    graphics.drawLine(150,0, 300, 300);
+    graphics.drawLine(300, 300, 0, 300);
 
 
-  public static void  drawYellowRects(int x, int y, int size, int n, Graphics graphics) {
-    if (n >= 0) {
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if ((3 * i + j + 1) % 2  != 0) {
-            graphics.setColor(Color.BLACK);
-            graphics.drawRect(size / 3 * j + x, size / 3 * i + y, size / 3, size / 3);
-          } else {
-            drawYellowRects(size / 3 * j + x, size / 3 * i + y, size / 3, n-1, graphics);
-          }
-        }
-      }
-    }
   }
+
+
 
   //    Don't touch the code below
   public static void main(String[] args) {
@@ -37,15 +28,13 @@ public class YellowStuff {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-
   static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
-      this.setBackground(Color.YELLOW);
       mainDraw(graphics);
 
     }
   }
-}
 
+}

@@ -6,22 +6,22 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by zsuzsanna.padar on 2017. 03. 30..
  */
-public class YellowStuff {
+public class BlackSquares {
   public static void mainDraw(Graphics graphics) {
 
-    drawYellowRects(0, 0, 300,  4, graphics);
-    }
+    drawBlackSquares(0, 0, 300, 6, graphics);
+  }
 
 
-  public static void  drawYellowRects(int x, int y, int size, int n, Graphics graphics) {
+  public static void  drawBlackSquares(int x, int y, int size, int n, Graphics graphics) {
     if (n >= 0) {
-      for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-          if ((3 * i + j + 1) % 2  != 0) {
+      for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+          if (i % 2 != 0 && j % 2 != 0) {
             graphics.setColor(Color.BLACK);
-            graphics.drawRect(size / 3 * j + x, size / 3 * i + y, size / 3, size / 3);
+            graphics.drawRect(size / 2 * j + x, size / 2 * i + y, size / 2, size / 2);
           } else {
-            drawYellowRects(size / 3 * j + x, size / 3 * i + y, size / 3, n-1, graphics);
+            drawBlackSquares(size / 2 * j + x + 2 * x /3, size / 2 * i + y, size / 2, n-1, graphics);
           }
         }
       }
@@ -42,10 +42,8 @@ public class YellowStuff {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
-      this.setBackground(Color.YELLOW);
       mainDraw(graphics);
 
     }
   }
 }
-
