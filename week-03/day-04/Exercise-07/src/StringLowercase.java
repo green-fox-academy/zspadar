@@ -3,10 +3,10 @@
  */
 public class StringLowercase {
   public static void main(String[] args) {
-    System.out.println(lowerCase("Bxtxasx"));
+    System.out.println(lowerCaseXToY("Bxtxasx"));
   }
 
-  public static String lowerCase(String word) {
+  public static String lowerCaseXToY(String word) {
     String manipulated;
     if (word.length() == 0) {
       return word;
@@ -19,7 +19,7 @@ public class StringLowercase {
     if (word.length() == 1) {
       return manipulated;
     } else {
-      return manipulated.concat(lowerCase(word.substring(1, word.length() -1)));
+      return manipulated.concat(lowerCaseXToY(word.substring(1, word.length())));
     }
 
   }
