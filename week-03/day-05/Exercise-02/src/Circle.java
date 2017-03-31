@@ -18,7 +18,7 @@ public class Circle{
     }
     int diameter = 2 * r;
 
-    graphics.drawOval(x + size / 2 - r, y + size / 2 - r, diameter, diameter);
+    graphics.drawOval(x + size / 2 - r, y + size / 2 - r , diameter, diameter);
     graphics.drawOval(x + size / 2 - r / 2, y + size / 4 - r / 2, diameter / 2, diameter / 2);
     graphics.drawOval(x + size / 4 - r / 2, y + 3 * size / 4 - r / 2, diameter / 2, diameter / 2);
     graphics.drawOval(x + 3 * size / 4 - r / 2, y + 3 * size / 4 - r / 2, diameter / 2 , diameter / 2);
