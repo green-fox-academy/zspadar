@@ -3,21 +3,31 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
+
 /**
- * Created by zsuzsanna.padar on 2017. 03. 30..
+ * Created by zsuzsanna.padar on 2017. 03. 31..
  */
-public class Triangle {
+public class Triangle{
   public static void mainDraw(Graphics graphics) {
-
-    graphics.setColor(Color.BLACK);
-    graphics.drawLine(0, 300,150,0);
-    graphics.drawLine(150,0, 300, 300);
-    graphics.drawLine(300, 300, 0, 300);
-
-
+    triangleFractalDrawer(0, 0, 300,  7, graphics);
   }
 
+  public static void triangleFractalDrawer(int x, int y, int size, int n, Graphics graphics) {
+    if (n == 0 ) {
+      return;
+    }
 
+    graphics.drawLine(x, y, x + size, y);
+    graphics.drawLine(x, y, x + size / 2, y + size);
+    graphics.drawLine(x + size / 2, y + size, x + size, y);
+//    graphics.drawLine(x + size / 2, y, x + size / 4, y + size / 2);
+//    graphics.drawLine(x + size / 4, y + size / 2, x + 3 * size / 4, y + size / 2);
+//    graphics.drawLine(x + 3 * size /4, y + size / 2, x + size / 2, y);
+
+    triangleFractalDrawer( x, y, size / 2,n-1, graphics);
+    triangleFractalDrawer(x + size / 2, y, size / 2, n -1, graphics);
+    triangleFractalDrawer(x + size / 4, y + size / 2, size / 2, n - 1, graphics);
+  }
 
   //    Don't touch the code below
   public static void main(String[] args) {
@@ -38,3 +48,4 @@ public class Triangle {
   }
 
 }
+
