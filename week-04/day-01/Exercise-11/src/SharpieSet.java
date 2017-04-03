@@ -8,7 +8,7 @@ public class SharpieSet {
   List<Sharpie> sharpies = new ArrayList<>();
 
   public void addSharpies (Sharpie sharpie) {
-    sharpies.add(new Sharpie());
+    sharpies.add(sharpie);
   }
 
   public int countUsable() {
@@ -20,7 +20,7 @@ public class SharpieSet {
     }
     return count;
   }
-  public void removeTrash(){
+  public void removeTrash() {
     List<Sharpie> trash = new ArrayList<>();
     for (int i = 0; i < sharpies.size(); i++) {
       if (sharpies.get(i).inkAmount == 0) {
@@ -28,5 +28,5 @@ public class SharpieSet {
       }
     }
     sharpies.removeAll(trash);
-
+  }
 }

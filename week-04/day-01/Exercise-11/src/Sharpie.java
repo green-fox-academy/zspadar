@@ -6,11 +6,14 @@ public class Sharpie {
   Float width;
   Float inkAmount;
 
-  public Sharpie() {
+  public Sharpie( String color, Float width) {
+    this.color = color;
+    this.width = width;
     inkAmount = (float)100;
   }
 
   public void use() {
+
     inkAmount -= 1;
   }
 
