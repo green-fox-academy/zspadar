@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by zsuzsanna.padar on 2017. 04. 03..
- */
 public class Fleet {
   private ArrayList<Thing> things;
 
