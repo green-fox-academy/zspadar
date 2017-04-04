@@ -9,12 +9,13 @@ public class Student extends Person {
   public void getGoal() {
     System.out.println("Be a junior software developer");
   }
+
   @Override
   public void introduce() {
     System.out.println("Hi, I'm " + this.getName() + ", a" + this.getAge() + " year old" + this.getGender() + "," +
             previousOrganization +
             " to The" +
-            " School of Life," + skippedDays + 0);
+            " School of Life," + "skipped" + skippedDays + 0 + "days.");
   }
 
   public void skipDays (int numberOfDays) {

@@ -19,11 +19,11 @@ public class Person {
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a" + age + " year old" + gender + ".");
+    System.out.println("Hi, I'm " + name + " , a" + age + " year old" + gender + ".");
   }
 
   public void getGoal() {
-    System.out.println("My goal is: Luve for the moment!");
+    System.out.println("My goal is: Live for the moment!");
   }
 
   Person() {
