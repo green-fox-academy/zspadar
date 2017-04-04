@@ -16,7 +16,7 @@ public class Sponsor extends Person {
             "who represents " + company + " and hired " + hiredStudents + " so far.");
   }
 
-  public void hire(int numberOfStudents) {
+  public void hire() {
     this.hiredStudents += 1;
   }
 

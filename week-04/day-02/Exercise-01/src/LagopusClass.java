@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by zsuzsanna.padar on 2017. 04. 04..
  */
-public class LagopusClass {
+public class LagopusClass extends Person {
   public String className;
   public ArrayList students;
   public ArrayList mentors;
