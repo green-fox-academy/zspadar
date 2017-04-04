@@ -2,12 +2,26 @@
  * Created by zsuzsanna.padar on 2017. 04. 04..
  */
 public class Plants {
-  public int waterAmount;
-  public double absorbation;
+  private String color;
+  private int waterAmount;
+  private int absorbation;
 
-  Plants(int waterAmount, double absorbation) {
+  Plants(String color, int waterAmount, int absorbation) {
+    this.color = color;
     this.absorbation = absorbation;
     this.waterAmount = waterAmount;
+  }
+
+  public String getColor() {
+    return color;
+  }
+
+  public int getWaterAmount() {
+    return waterAmount;
+  }
+
+  public int getAbsorbation() {
+    return absorbation;
   }
 
   public void currentWaterAmount() {

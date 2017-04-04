@@ -53,6 +53,13 @@ public class Garden {
     return plantNeedsWater;
   }
 
+  public List<Integer> flowerAbsorbsWater(int absorbation, int plantNeedsWater) {
+    List<Integer> flowerWaterAbsorbation = new ArrayList<>();
+    for (int i = 0; i < flowers.size(); i++) {
+      if (absorbation <)
+    }
+  }
+
 
 
 }
