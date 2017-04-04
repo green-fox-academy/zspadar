@@ -23,23 +23,27 @@ public class Garden {
     trees.add(tree);
   }
 
-  public int FlowersNeedsWater(int waterAmount) {
-    int flowerThirsty = 0;
+  public List<Integer> flowersNeedsWater(int waterAmount) {
+    List<Integer> flowerThirsty = new ArrayList<>();
     for (int i = 0; i < flowers.size(); i++) {
       if (waterAmount < 5) {
-        flowerThirsty += 1;
+        flowerThirsty.add(i);
       }
     }
     return flowerThirsty;
   }
-  public int TreeNeedsWater(int waterAmount) {
-    int treeThirsty = 0;
+
+  public List<Integer> treeNeedsWater(int waterAmount) {
+    List<Integer> treeThirsty = new ArrayList<>();
     for (int i = 0; i < trees.size(); i++) {
       if (waterAmount < 10) {
-        treeThirsty += 1;
+        treeThirsty.add(i);
       }
     }
+    return treeThirsty;
   }
+
+  public int plantNeedsWater
 
 
 }
