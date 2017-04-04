@@ -3,9 +3,15 @@
  */
 public class TheGardenApplication {
   public static void main(String[] args) {
-    Plants flower1 = new Flowers("yellow", 34, 75 );
-    Plants flower2 = new Flowers("blue", 2, 75);
-    Plants tree1 = new Trees("purple", 8, 40);
-    Plants tree2 = new Trees("orange", 6, 40);
+    Garden garden = new Garden();
+    garden.addPlant(new Flower("blue"));
+    garden.addPlant(new Flower("yellow"));
+    garden.addPlant(new Tree("purple"));
+    garden.addPlant(new Tree("orange"));
+
+    garden.status();
+
+    garden.water(40);
+    garden.water(70);
   }
 }
