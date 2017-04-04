@@ -2,7 +2,7 @@
  * Created by zsuzsanna.padar on 2017. 04. 04..
  */
 public class Sponsor extends Person {
-  private  String company;
+  private String company;
   private int hiredStudents;
 
   @Override
