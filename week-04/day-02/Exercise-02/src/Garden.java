@@ -13,7 +13,7 @@ public class Garden {
 
   public int waterAmount;
   public double absorbation;
-  
+
 
   Garden () {
     this.flowers = new ArrayList<>();
