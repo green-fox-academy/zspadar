@@ -16,8 +16,21 @@ public class Student extends Person {
             " to The" +
             " School of Life," + skippedDays + 0);
   }
+
   public void skipDays (int numberOfDays) {
     this.skippedDays += numberOfDays;
+  }
+
+  Student(String name, int age, String gender, String previousOrganization) {
+    super(name, age, gender);
+    this.previousOrganization = previousOrganization;
+    this.skippedDays = 0;
+  }
+
+  Student() {
+    super();
+    previousOrganization = "The School of Life";
+    this.skippedDays = 0;
   }
 
 }
