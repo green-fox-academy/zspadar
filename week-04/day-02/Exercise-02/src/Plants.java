@@ -19,6 +19,9 @@ public class Plants {
   public int getWaterAmount() {
     return waterAmount;
   }
+  public void setWaterAmount(int waterAmount) {
+    this.waterAmount = waterAmount;
+  }
 
   public int getAbsorbation() {
     return absorbation;
