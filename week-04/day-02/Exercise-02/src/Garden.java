@@ -7,13 +7,8 @@ import java.util.ArrayList;
  * Created by zsuzsanna.padar on 2017. 04. 04..
  */
 public class Garden {
-  public List <Flowers> flowers;
-  public List <Trees> trees;
-
-
-  public int waterAmount;
-  public double absorbation;
-
+  private  List <Flowers> flowers;
+  private List <Trees> trees;
 
   Garden () {
     this.flowers = new ArrayList<>();
