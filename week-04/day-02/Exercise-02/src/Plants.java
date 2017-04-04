@@ -17,4 +17,7 @@ public class Plants {
   public void currentAbsorbation() {
     System.out.println(absorbation);
   }
+
+
+
 }
