@@ -43,7 +43,16 @@ public class Garden {
     return treeThirsty;
   }
 
-  public int plantNeedsWater
+  public int plantNeedsWater (int waterAmount) {
+    int plantNeedsWater = treeNeedsWater(waterAmount).size() + flowersNeedsWater(waterAmount).size();
+    if (plantNeedsWater == 0) {
+      System.out.println("Plants do not need water");
+    } else {
+      waterAmount = waterAmount / plantNeedsWater;
+    }
+    return plantNeedsWater;
+  }
+
 
 
 }
