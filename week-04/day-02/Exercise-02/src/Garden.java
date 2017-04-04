@@ -53,6 +53,26 @@ public class Garden {
     return plantNeedsWater;
   }
 
+  public void statusReportOnWater() {
+    for (Flowers flower : flowers) {
+      if (flower.getAbsorbation() < 5) {
+        System.out.println("This " + flower.getColor() + " flower needs water!");
+      } else {
+        System.out.println("This " + flower.getColor() + " flower does not need water!");
+      }
+    }
+    for (Trees tree : trees) {
+      if (tree.getWaterAmount() < 10) {
+        System.out.println("This " + tree.getColor() + " tree needs water!");
+      } else {
+        System.out.println("This " + tree.getColor() + " flower does not need water!");
+
+      }
+    }
+  }
+
+
+
   public List<Integer> flowerAbsorbsWater(int absorbation, int plantNeedsWater) {
     List<Integer> flowerWaterAbsorbation = new ArrayList<>();
     for (int i = 0; i < flowers.size(); i++) {
