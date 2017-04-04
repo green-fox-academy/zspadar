@@ -44,13 +44,14 @@ public class Garden {
   }
 
   public int plantNeedsWater (int waterAmount) {
+    int theExaxtWaterAmount = 0;
     int plantNeedsWater = treeNeedsWater(waterAmount).size() + flowersNeedsWater(waterAmount).size();
     if (plantNeedsWater == 0) {
       System.out.println("Plants do not need water");
     } else {
-      waterAmount = waterAmount / plantNeedsWater;
+      theExaxtWaterAmount = waterAmount / plantNeedsWater;
     }
-    return plantNeedsWater;
+    return theExaxtWaterAmount;
   }
 
   public void statusReportOnWater() {
@@ -70,15 +71,17 @@ public class Garden {
       }
     }
   }
+  
 
 
 
-  public List<Integer> flowerAbsorbsWater(int absorbation, int plantNeedsWater) {
-    List<Integer> flowerWaterAbsorbation = new ArrayList<>();
-    for (int i = 0; i < flowers.size(); i++) {
-      if (absorbation <)
-    }
-  }
+
+//  public List<Integer> flowerAbsorbsWater(int absorbation, int plantNeedsWater) {
+//    List<Integer> flowerWaterAbsorbation = new ArrayList<>();
+//    for (int i = 0; i < flowers.size(); i++) {
+//      if (absorbation <)
+//    }
+//  }
 
 
 
