@@ -13,4 +13,14 @@ public class Mentor extends Person {
     System.out.println("Hi, I'm " + this.getName() + ", a" + this.getAge() + " year old" + this.getGender() + "," +
             level + "mentor.");
   }
+  Mentor(String name, int age, String gender, String level) {
+    super(name, age, gender);
+    this.level = level;
+  }
+
+  Mentor(){
+    super();
+    level = "intermediate";
+  }
+
 }

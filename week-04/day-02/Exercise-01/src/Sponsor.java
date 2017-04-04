@@ -30,5 +30,5 @@ public class Sponsor extends Person {
     company = "Google";
     this.hiredStudents = 0;
   }
-  
+
 }
