@@ -16,5 +16,8 @@ public class Student extends Person {
             " to The" +
             " School of Life," + skippedDays + 0);
   }
+  public void skipDays (int numberOfDays) {
+    this.skippedDays += numberOfDays;
+  }
 
 }
