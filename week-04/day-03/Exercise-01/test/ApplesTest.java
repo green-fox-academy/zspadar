@@ -17,6 +17,6 @@ public class ApplesTest {
 
   @Test
   public void getName() throws Exception {
-    assertEquals("pear", apples.getName());
+    assertEquals("apple", apples.getName());
   }
 }
