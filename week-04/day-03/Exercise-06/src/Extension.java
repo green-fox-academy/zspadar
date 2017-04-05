@@ -11,10 +11,7 @@ public class Extension {
   }
 
   int maxOfThree(int a, int b, int c) {
-    if (a > b)
-      return a;
-    else
-      return c;
+    return Math.max(Math.max(a,b),c);
   }
 
   int median(List<Integer> pool) {
