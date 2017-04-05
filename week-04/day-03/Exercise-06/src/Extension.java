@@ -17,7 +17,7 @@ public class Extension {
   }
 
   int median(List<Integer> pool) {
-    return pool.get((pool.size()-1)/2);
+    return pool.get((pool.size() - 1) / 2);
   }
 
   boolean isVowel(char c) {

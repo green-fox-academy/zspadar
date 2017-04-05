@@ -21,6 +21,11 @@ class ExtensionTest {
   }
 
   @Test
+  void tetsAdd_1and5is5() {
+    assertEquals(6, extension.add(1, 5));
+  }
+
+  @Test
   void testMaxOfThree_first() {
     assertEquals(5, extension.maxOfThree(5, 4, 3));
   }
@@ -28,6 +33,11 @@ class ExtensionTest {
   @Test
   void testMaxOfThree_third() {
     assertEquals(5, extension.maxOfThree(3, 4, 5));
+  }
+
+  @Test
+  void testMaxOfThree_second() {
+    assertEquals(5, extension.maxOfThree(3, 5, 4));
   }
 
   @Test
@@ -41,6 +51,11 @@ class ExtensionTest {
   }
 
   @Test
+  void testMedian_seven() {
+    assertEquals(1, extension.median(Arrays.asList(1,1,1,3,1,1,1)));
+  }
+
+  @Test
   void testIsVowel_a() {
     assertTrue(extension.isVowel('a'));
   }
@@ -48,6 +63,11 @@ class ExtensionTest {
   @Test
   void testIsVowel_u() {
     assertTrue(extension.isVowel('u'));
+  }
+
+  @Test
+  void testIsVowel_U() {
+    assertTrue(extension.isVowel('U'));
   }
 
   @Test
@@ -59,4 +79,11 @@ class ExtensionTest {
   void testTranslate_kolbice() {
     assertEquals("lavagovopuvus", extension.translate("lagopus"));
   }
+
+  @Test
+  void testTranslate_ter() {
+    assertEquals("leveevesivik", extension.translate("leesik"));
+  }
+
+
 }
