@@ -52,7 +52,7 @@ class ExtensionTest {
 
   @Test
   void testMedian_seven() {
-    assertEquals(1, extension.median(Arrays.asList(1,1,1,3,1,1,1)));
+    assertEquals(1.5, extension.median(Arrays.asList(1,1,1,3,1,1,1)));
   }
 
   @Test
