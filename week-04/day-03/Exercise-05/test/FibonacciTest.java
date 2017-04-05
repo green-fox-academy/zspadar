@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -5,4 +7,9 @@ import static org.junit.Assert.*;
  */
 public class FibonacciTest {
 
+  @Test
+  public void isFibonacciWorks() throws Exception {
+    Fibonacci testFibonacci = new Fibonacci();
+    assertEquals(1, testFibonacci.fibonacci(3));
+  }
 }
