@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,15 +17,16 @@ public class Extension {
   }
 
   double median(List<Integer> pool) {
+    Collections.sort(pool);
     if (pool.size() % 2 == 0) {
-     return ((pool.get(pool.size() / 2)) + pool.get(pool.size() / 2 - 1)) / 2;
+     return (double) ((pool.get(pool.size() / 2)) + pool.get(pool.size() / 2 - 1)) / 2;
     } else {
-      return pool.get(pool.size() - 1 / 2);
+      return (double) pool.get(pool.size() - 1 / 2);
     }
   }
 
   boolean isVowel(char c) {
-    return Arrays.asList('a', 'u', 'o', 'e', 'i').contains(c);
+    return Arrays.asList('a', 'A', 'u','U', 'o','O', 'e','E', 'i', 'I').contains(c);
   }
 
   String translate(String hungarian) {
