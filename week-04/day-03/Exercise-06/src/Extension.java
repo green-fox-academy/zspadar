@@ -21,7 +21,7 @@ public class Extension {
     if (pool.size() % 2 == 0) {
      return (double) ((pool.get(pool.size() / 2)) + pool.get(pool.size() / 2 - 1)) / 2;
     } else {
-      return (double) pool.get(pool.size() - 1 / 2);
+      return (double) pool.get((pool.size() + 1) / 2 - 1) ;
     }
   }
 
