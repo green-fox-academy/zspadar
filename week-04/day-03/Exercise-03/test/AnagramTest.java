@@ -17,8 +17,11 @@ public class AnagramTest {
 
   @Test
   public void isAnagramTrue() throws Exception {
-  assertTrue(anagram.isAnagram("dog", "god"));
+    assertTrue(anagram.isAnagram("dog", "god"));
   }
 
-  
+  @Test
+  public void isAnagramFalse() throws Exception {
+    assertFalse(anagram.isAnagram("green", "fox"));
+  }
 }
