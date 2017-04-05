@@ -26,7 +26,7 @@ public class SummingSumTest {
   public void testIfSumIsSum() throws Exception {
     List<Integer> myList = new ArrayList<>(Arrays.asList(12, 14, 14));
     summingSum.sumItUp(myList);
-    assertEquals(summingSum.sumItUp(myList), 40);
+    assertEquals(40,summingSum.sumItUp(myList));
   }
 
 
@@ -34,25 +34,25 @@ public class SummingSumTest {
   public void testSumWithEmptyList() throws Exception {
     List<Integer> myList = new ArrayList<>(Arrays.asList());
     summingSum.sumItUp(myList);
-    assertEquals(summingSum.sumItUp(myList), 0);
+    assertEquals(0, summingSum.sumItUp(myList));
   }
 
   @Test
   public void testWithOneElement() throws Exception {
     List<Integer> myList = new ArrayList<>(Arrays.asList(11));
     summingSum.sumItUp(myList);
-    assertEquals(summingSum.sumItUp(myList), 11);
+    assertEquals(11,summingSum.sumItUp(myList));
   }
 
   @Test
   public void testWithMultipleElements() throws Exception {
     List<Integer> myList = new ArrayList<>(Arrays.asList(1,1,1,1));
     summingSum.sumItUp(myList);
-    assertEquals(summingSum.sumItUp(myList), 4);
+    assertEquals(4, summingSum.sumItUp(myList));
   }
 
   @Test
   public void testWithNull() throws Exception {
-    assertEquals(summingSum.sumItUp(null), 0);
+    assertEquals(0,summingSum.sumItUp(null));
   }
 }
