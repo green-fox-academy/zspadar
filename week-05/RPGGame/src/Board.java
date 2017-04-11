@@ -47,15 +47,19 @@ public class Board extends JComponent implements KeyListener {
 
     int floorMapRow = floormap.length;
     int floorMapColumn = floormap[0].length;
-    
-    for (int i = 0; i < 720; i += tileSize) {
-      for (int j = 0; j < 792; j += tileSize) {
-        if( )
-        PositionedImage floor = new PositionedImage("assets/floor.png", i , j);
-        floor.draw(graphics);
+
+    for (int i = 0; i < floorMapRow; i ++) {
+      for (int j = 0; j < floorMapColumn; j ++) {
+        if (floormap[i][j] == 0) {
+          PositionedImage floor = new PositionedImage("assets/floor.png", i * tileSize, j * tileSize);
+          floor.draw(graphics);
+        } else if (floormap[i][j] == 1) {
+          PositionedImage wall = new PositionedImage("assets/wall.png", i * tileSize, j*tileSize);
+          wall.draw(graphics);
+        }
+
       }
     }
-
   }
 
 
