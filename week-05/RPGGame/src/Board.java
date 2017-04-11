@@ -13,11 +13,16 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   String heroImage;
+  int[][] floorMap;
+  int tileSize;
+
 
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
     heroImage = "assets/hero-down.png";
+    tileSize = 72;
+
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 792));
@@ -27,12 +32,12 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    int tileSize = 72;
+
     //graphics.fillRect(testBoxX, testBoxY, 100, 100);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
 
-    int[] [] floormap = new int[] [] {
+    floorMap = new int[][] {
             {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
             {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
             {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
@@ -46,16 +51,15 @@ public class Board extends JComponent implements KeyListener {
             {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}
     };
 
-    int floorMapRow = floormap.length;
-    int floorMapColumn = floormap[0].length;
 
-    for (int i = 0; i < floorMapRow; i ++) {
-      for (int j = 0; j < floorMapColumn; j ++) {
-        if (floormap[i][j] == 0) {
-          PositionedImage floor = new PositionedImage("assets/floor.png", i * tileSize, j * tileSize);
+
+    for (int i = 0; i < 11; i ++) {
+      for (int j = 0; j < 10; j ++) {
+        if (floorMap[i][j] == 0) {
+          PositionedImage floor = new PositionedImage("assets/floor.png", j * tileSize, i * tileSize);
           floor.draw(graphics);
-        } else if (floormap[i][j] == 1) {
-          PositionedImage wall = new PositionedImage("assets/wall.png", i * tileSize, j*tileSize);
+        } else if (floorMap[i][j] == 1) {
+          PositionedImage wall = new PositionedImage("assets/wall.png", j  * tileSize, i *tileSize);
           wall.draw(graphics);
         }
 
@@ -103,16 +107,19 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP &&  0 < testBoxY) {
+    if (e.getKeyCode() == KeyEvent.VK_UP &&  0 < testBoxY ) {
       heroImage = "assets/hero-up.png";
-      testBoxY -= 72;
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN &&  testBoxY < 648)  {
+      if (floorMap[(testBoxY / 72 - 1)][testBoxX / 72] != 1) {
+        testBoxY -= 72;
+      }
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN &&  testBoxY < 720) {
       heroImage= "assets/hero-down.png";
+//      if (floorMap[testBoxY / 72] [testBoxX / 72])
       testBoxY += 72;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX ) {
       heroImage = "assets/hero-left.png";
       testBoxX -= 72;
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 720) {
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 648) {
       heroImage = "assets/hero-right.png";
       testBoxX += 72;
     }
