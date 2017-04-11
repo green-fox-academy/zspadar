@@ -6,10 +6,10 @@ public class Character {
   private int positionY;
   private String name;
 
-  public Character(int characterPositionX, int characterPositionY, String characterName) {
-    positionX = characterPositionX;
-    positionY = characterPositionY;
-    name = characterName;
+  public Character(int positionX, int positionY, String name) {
+    this.positionX = positionX;
+    this.positionY = positionY;
+    this.name = name;
   }
 
   public int getPositionX() {
