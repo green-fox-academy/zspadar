@@ -8,6 +8,7 @@ public class Fleet {
   }
 
   public void add(Thing thing) {
+
     things.add(thing);
   }
 
