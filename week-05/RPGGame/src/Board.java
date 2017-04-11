@@ -18,7 +18,7 @@ public class Board extends JComponent implements KeyListener {
     testBoxY = 300;
 
     // set the size of your draw board
-    setPreferredSize(new Dimension(720, 720));
+    setPreferredSize(new Dimension(720, 792));
     setVisible(true);
   }
 
@@ -31,8 +31,26 @@ public class Board extends JComponent implements KeyListener {
     // you can create and draw an image using the class below e.g.
     PositionedImage hero = new PositionedImage("assets/hero-up.png", testBoxX, testBoxY);
     hero.draw(graphics);
+    int[] []  floormap = new int[] []{
+            {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+            {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+            {0, 1, 1, 1, 0, 1, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 1, 1, 1, 1, 0},
+            {1, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+            {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+            {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+            {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+            {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
+            {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}
+    };
+
+    int floorMapRow = floormap.length;
+    int floorMapColumn = floormap[0].length;
+    
     for (int i = 0; i < 720; i += tileSize) {
       for (int j = 0; j < 792; j += tileSize) {
+        if( )
         PositionedImage floor = new PositionedImage("assets/floor.png", i , j);
         floor.draw(graphics);
       }
