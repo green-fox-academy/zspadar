@@ -1,15 +1,15 @@
 /**
  * Created by zsuzsanna.padar on 2017. 04. 11..
  */
-public class BadGuy {
+public class Character {
   private int positionX;
   private int positionY;
   private String name;
 
-  public BadGuy(int badGuyPositionX, int badGuyPositionY, String badGuyName) {
-    positionX = badGuyPositionX;
-    positionY = badGuyPositionY;
-    name = badGuyName;
+  public Character(int characterPositionX, int characterPositionY, String characterName) {
+    positionX = characterPositionX;
+    positionY = characterPositionY;
+    name = characterName;
   }
 
   public int getPositionX() {
