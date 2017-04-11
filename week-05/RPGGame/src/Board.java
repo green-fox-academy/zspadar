@@ -30,7 +30,7 @@ public class Board extends JComponent implements KeyListener {
     // you can create and draw an image using the class below e.g.
     PositionedImage floor = new PositionedImage("assets/floor.png", 300, 300);
     floor.draw(graphics);
-    PositionedImage hero = new PositionedImage("assets/hero-up.png", 300, 300);
+    PositionedImage hero = new PositionedImage("assets/hero-up.png", testBoxX, testBoxY);
     hero.draw(graphics);
 
   }
