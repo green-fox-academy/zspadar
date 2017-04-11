@@ -8,9 +8,16 @@ import java.util.ArrayList;
 public class Coordinate {
   private List<Coordinate> coordinates;
 
-
-
   public Coordinate() {
+    this.coordinates = new ArrayList<>();
+  }
+
+  public List<Coordinate> getCoordinates() {
+    return coordinates;
+  }
+
+  public void addCooridnates(Coordinate coordinate){
+    coordinates.add(coordinate);
   }
 
   Board board = new Board();
@@ -21,7 +28,7 @@ public class Coordinate {
       for (int j = 0; j < board.getFloorMap()[i].length; j++) {
         int position = board.getFloorMap()[i][j];
         if (position == 0) {
-          listOfGoodCoordinates.add(Arrays.asList(board.getFloorMap()[i][j]));
+//          listOfGoodCoordinates.add(Arrays.asList(board.getFloorMap()[i][j]).get((int) (Math.random() *)));
         }
       }
     }

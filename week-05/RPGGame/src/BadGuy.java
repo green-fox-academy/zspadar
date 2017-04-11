@@ -6,10 +6,10 @@ public class BadGuy {
   private int positionY;
   private String name;
 
-  public BadGuy(int aPositionX, int aPositionY, String aName) {
-    positionX = positionX;
-    positionY = positionY;
-    name = name;
+  public BadGuy(int badGuyPositionX, int badGuyPositionY, String badGuyName) {
+    positionX = badGuyPositionX;
+    positionY = badGuyPositionY;
+    name = badGuyName;
   }
 
   public int getPositionX() {
