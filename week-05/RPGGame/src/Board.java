@@ -114,16 +114,19 @@ public class Board extends JComponent implements KeyListener {
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN &&  testBoxY < 720) {
       heroImage= "assets/hero-down.png";
-      if (floorMap[testBoxY / 72 + 1] [testBoxX / 72] != 1)
-      testBoxY += 72;
+      if (floorMap[testBoxY / 72 + 1] [testBoxX / 72] != 1) {
+        testBoxY += 72;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX ) {
       heroImage = "assets/hero-left.png";
-      if (floorMap[testBoxY / 72 ] [testBoxX / 72 -1] != 1)
-      testBoxX -= 72;
+      if (floorMap[testBoxY / 72 ] [testBoxX / 72 -1] != 1) {
+        testBoxX -= 72;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 648) {
       heroImage = "assets/hero-right.png";
-      if (floorMap[testBoxY / 72 ] [testBoxX / 72 +1] != 1)
-      testBoxX += 72;
+      if (floorMap[testBoxY / 72 ] [testBoxX / 72 +1] != 1) {
+        testBoxX += 72;
+      }
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
