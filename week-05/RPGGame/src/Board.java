@@ -59,9 +59,25 @@ public class Board extends JComponent implements KeyListener {
 
       }
     }
+
     PositionedImage hero = new PositionedImage("assets/hero-up.png", testBoxX, testBoxY);
     hero.draw(graphics);
   }
+   public void placeCaracter(KeyEvent e, Graphics graphics) {
+    if (e.getKeyCode() == KeyEvent.VK_UP){
+      PositionedImage hero = new PositionedImage("assets/hero-up.png", testBoxX, testBoxY);
+      hero.draw(graphics);
+    } else if  (e.getKeyCode() == KeyEvent.VK_DOWN) {
+      PositionedImage heroDown = new PositionedImage("assets/hero-down.png", testBoxX, testBoxY);
+      heroDown.draw(graphics);
+    } else if  (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      PositionedImage heroLeft = new PositionedImage("assets/hero-left.png", testBoxX, testBoxY);
+      heroLeft.draw(graphics);
+    } else if  (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      PositionedImage heroRight = new PositionedImage("assets/hero-right.png", testBoxX, testBoxY);
+      heroRight.draw(graphics);
+    }
+   }
 
 
   public static void boardMain() {
@@ -78,6 +94,7 @@ public class Board extends JComponent implements KeyListener {
     frame.addKeyListener(board);
     // Notice (at the top) that we can only do this
     // because this Board class (the type of the board object) is also a KeyListener
+
   }
 
 
