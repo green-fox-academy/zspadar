@@ -25,15 +25,21 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
+    int tileSize = 72;
     //graphics.fillRect(testBoxX, testBoxY, 100, 100);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    PositionedImage floor = new PositionedImage("assets/floor.png", 300, 300);
-    floor.draw(graphics);
     PositionedImage hero = new PositionedImage("assets/hero-up.png", testBoxX, testBoxY);
     hero.draw(graphics);
+    for (int i = 0; i < 720; i += tileSize) {
+      for (int j = 0; j < 792; j += tileSize) {
+        PositionedImage floor = new PositionedImage("assets/floor.png", i , j);
+        floor.draw(graphics);
+      }
+    }
 
   }
+
 
   public static void boardMain() {
     // Here is how you set up a new window and adding our board to it
@@ -51,6 +57,8 @@ public class Board extends JComponent implements KeyListener {
     // because this Board class (the type of the board object) is also a KeyListener
   }
 
+
+
   // To be a KeyListener the class needs to have these 3 methods in it
   @Override
   public void keyTyped(KeyEvent e) {
@@ -67,9 +75,9 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxX -= 100;
+      testBoxX -= 72;
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
+      testBoxY += 72;
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
