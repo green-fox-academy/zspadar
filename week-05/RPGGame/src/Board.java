@@ -13,9 +13,24 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   String heroImage;
-  int[][] floorMap;
   int tileSize;
+  int[][] floorMap = new int[][] {
+    {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+    {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+    {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+    {0, 1, 1, 1, 0, 1, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 1, 1, 1, 1, 0},
+    {1, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+    {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+    {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+    {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+    {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
+    {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}
+  };
 
+  public int[][] getFloorMap() {
+    return floorMap;
+  }
 
   public Board() {
     testBoxX = 0;
@@ -37,19 +52,7 @@ public class Board extends JComponent implements KeyListener {
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
 
-    floorMap = new int[][] {
-            {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
-            {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
-            {0, 1, 1, 1, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 1, 1, 1, 1, 0},
-            {1, 1, 1, 1, 0, 0, 0, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-            {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}
-    };
+
 
 
 
@@ -62,7 +65,6 @@ public class Board extends JComponent implements KeyListener {
           PositionedImage wall = new PositionedImage("assets/wall.png", j  * tileSize, i *tileSize);
           wall.draw(graphics);
         }
-
       }
     }
 
