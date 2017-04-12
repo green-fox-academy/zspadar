@@ -11,18 +11,25 @@ public class Character extends GameObject {
 
   public void moveUp (){
     if (GameMap.floorMap[(getPosY()/ 72   - 1)][getPosX() / 72] != 1) {
-      getPosY() -= 72;
-
+      move(0, -72);
+    }
   }
 
   public void moveDown (){
-
+    if (GameMap.floorMap[(getPosY()/ 72   +1)][getPosX() / 72] != 1) {
+      move(0, +72);
+    }
   }
   public void moveLeft() {
-
+    if (GameMap.floorMap[(getPosY()/ 72 )][getPosX() / 72 - 1] != 1) {
+      move(-72, 0);
+    }
   }
 
   public void moveRight() {
+    if (GameMap.floorMap[(getPosY()/ 72 )][getPosX() / 72 - 1] != 1) {
+      move(+72, 0);
+    }
 
   }
 

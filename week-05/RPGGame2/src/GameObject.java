@@ -30,8 +30,8 @@ public class GameObject {
     return costume;
   }
 
-//  public void move() {
-//    this.posX = getCharPosX();
-//    this.posY = getCharPosY();
-//  }
+  public void move(int x, int y) {
+    this.posX = posX + x;
+    this.posY = posY + y;
+  }
 }
