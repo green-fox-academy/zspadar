@@ -112,7 +112,7 @@ public class Board extends JComponent implements KeyListener {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP &&  0 < testBoxY ) {
       heroImage = "assets/hero-up.png";
-      if (floorMap[(testBoxY / 72 - 1)][testBoxX / 72] != 1) {
+      if (floorMap[(testBoxY /    - 1)][testBoxX / 72] != 1) {
         testBoxY -= 72;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN &&  testBoxY < 720) {
