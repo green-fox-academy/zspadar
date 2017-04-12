@@ -1,11 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.List;
 
 /**
  * Created by zsuzsanna.padar on 2017. 04. 12..
  */
-public class GameEngine extends JComponent  {
+public class GameEngine extends JComponent implements KeyListener {
   private GameMap gameMap;
 
 
@@ -44,6 +46,27 @@ public class GameEngine extends JComponent  {
     // because this Board class (the type of the board object) is also a KeyListener
   }
 
+  @Override
+  public void keyTyped(KeyEvent e) {
 
+  }
 
+  @Override
+  public void keyPressed(KeyEvent e) {
+
+  }
+
+  @Override
+  public void keyReleased(KeyEvent e) {
+    // When the up or down keys hit, we change the position of our box
+    if (e.getKeyCode() == KeyEvent.VK_UP) {
+
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN ) {
+
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT ) {
+
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT ) {
+
+    }
+  }
 }
