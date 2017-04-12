@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,15 +17,18 @@ public class GameEngine extends JComponent implements KeyListener {
 
   public GameEngine() {
     this.gameMap = new GameMap();
-    this.hero = new Hero(0,0, "assets/hero-down.png");
+    hero = new Hero(0,0, "assets/hero-down.png");
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
+    gameMap.fillMap();
+    List<GameObject> heroList = new ArrayList<>();
+    heroList.add(hero);
+    gameMap.getGameObjects().add(heroList);
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    gameMap.fillMap();
     for (List<GameObject> temp : gameMap.getGameObjects()) {
       for (GameObject temp2 : temp) {
         PositionedImage image = new PositionedImage(temp2.getCostume(), temp2.getPosX(), temp2.getPosY());
@@ -40,6 +44,7 @@ public class GameEngine extends JComponent implements KeyListener {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
     frame.pack();
+    frame.addKeyListener(gameEngine);
     // Here is how you can add a key event listener
     // The board object will be notified when hitting any key
     // with the system calling one of the below 3 methods
@@ -71,7 +76,7 @@ public class GameEngine extends JComponent implements KeyListener {
 
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT ) {
       hero.moveRight();
-
     }
+    repaint();
   }
 }

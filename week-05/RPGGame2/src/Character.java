@@ -13,11 +13,6 @@ public class Character extends GameObject {
 
   }
 
-
-
-
-
-
   public void moveUp() {
     if ((GameMap.floorMap[(getPosY()/ 72   - 1)][getPosX() / 72] != 1) && (getPosY() - 72 >= 0)) {
       move(0, -72);
@@ -36,7 +31,7 @@ public class Character extends GameObject {
   }
 
   public void moveRight() {
-    if ((GameMap.floorMap[(getPosY()/ 72 )][getPosX() / 72 - 1] != 1) && (getPosX() + 72 < 720)) {
+    if ((GameMap.floorMap[(getPosY()/ 72 )][getPosX() / 72 + 1] != 1) && (getPosX() + 72 < 720)) {
       move(+72, 0);
     }
 
