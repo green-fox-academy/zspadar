@@ -8,8 +8,13 @@ public class Character extends GameObject {
     super(posX, posY, costume);
   }
 
+
   public Character() {
+
   }
+
+
+
 
 
 

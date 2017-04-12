@@ -30,6 +30,10 @@ public class GameObject {
     return costume;
   }
 
+  public void setCostume(String costume) {
+    this.costume = costume;
+  }
+
   public void move(int x, int y) {
     this.posX = posX + x;
     this.posY = posY + y;
