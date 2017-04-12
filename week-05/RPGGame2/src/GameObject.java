@@ -30,8 +30,8 @@ public class GameObject {
     return costume;
   }
 
-  public move() {
-    this.posX = getCharPosX();
-    this.posY = getCharPosY();
-  }
+//  public void move() {
+//    this.posX = getCharPosX();
+//    this.posY = getCharPosY();
+//  }
 }

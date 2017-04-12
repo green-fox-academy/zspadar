@@ -7,7 +7,7 @@ public class Floor extends Tile {
   private String costume;
 
   public Floor(int posX, int posY, String costume) {
-   super(posX, posX, costume);
+   super(posX, posY, costume);
   }
 
   public boolean isClear() {

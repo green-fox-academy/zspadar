@@ -7,7 +7,11 @@ public class Character extends GameObject {
     super();
   }
 
+
+
   public void moveUp (){
+    if (GameMap.floorMap[(getPosY()/ 72   - 1)][getPosX() / 72] != 1) {
+      getPosY() -= 72;
 
   }
 
