@@ -8,7 +8,9 @@ public class GameMap {
   public static int[] [] floorMap;
   private List<List<GameObject>> gameObjects;
 
+
   public List<List<GameObject>> getGameObjects() {
+
     return gameObjects;
   }
 
