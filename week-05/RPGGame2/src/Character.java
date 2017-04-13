@@ -5,15 +5,16 @@ import java.util.List;
  * Created by zsuzsanna.padar on 2017. 04. 12..
  */
 public class Character extends GameObject {
-  private List<GameObject> characterList;
+
   private GameMap map;
 
 
   public Character(int posX, int posY, String costume, GameMap map) {
     super(posX, posY, costume);
-    characterList = new ArrayList<>();
+
     this.map = map;
   }
+
 
 
 
@@ -21,9 +22,7 @@ public class Character extends GameObject {
 
   }
 
-  public List<GameObject> getCharacterList() {
-    return characterList;
-  }
+
 
   public void moveUp() {
     if ((GameMap.floorMap[(getPosY()/ 72   - 1)][getPosX() / 72] != 1) && (getPosY() - 72 >= 0)) {

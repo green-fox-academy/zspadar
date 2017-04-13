@@ -8,10 +8,10 @@ public class BadGuy extends Character {
     super(posX, posY, costume, map);
   }
 
-  public int[] getRandomXY () {
-
-    return ;
-  }
+//  public int[] getRandomXY () {
+//
+//    return ;
+//  }
 
 
 }

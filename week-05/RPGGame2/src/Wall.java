@@ -7,6 +7,10 @@ public class Wall extends Tile {
   private String costume;
 
   public Wall(int posX, int posY, String costume) {
+
     super(posX, posY, costume);
+  }
+
+  public Wall() {
   }
 }

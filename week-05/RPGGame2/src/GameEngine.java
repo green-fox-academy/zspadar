@@ -11,6 +11,10 @@ import java.util.List;
 public class GameEngine extends JComponent implements KeyListener {
   private GameMap gameMap;
   private Hero hero;
+  private Skeleton skeleton1;
+  private Skeleton skeleton2;
+  private Skeleton skeleton3;
+  private Boss boss;
 
 
 
@@ -18,23 +22,35 @@ public class GameEngine extends JComponent implements KeyListener {
 
   public GameEngine() {
     this.gameMap = new GameMap();
-    hero = new Hero(0,0, "assets/hero-down.png");
+    hero = new Hero(0,0, "assets/hero-down.png", gameMap);
+    skeleton1 = new Skeleton(gameMap.randCoordinate()[0],gameMap.randCoordinate()[1], "assets/skeleton.png", gameMap);
+    skeleton2 = new Skeleton(gameMap.randCoordinate()[0],gameMap.randCoordinate()[1], "assets/skeleton.png", gameMap);
+    skeleton3 = new Skeleton(gameMap.randCoordinate()[0],gameMap.randCoordinate()[1],"assets/skeleton.png", gameMap);
+    boss = new Boss(gameMap.randCoordinate()[0],gameMap.randCoordinate()[1],"assets/boos.png", gameMap);
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
     gameMap.fillMap();
-    List<GameObject> heroList = new ArrayList<>();
-    heroList.add(hero);
-    gameMap.getGameObjects().add(heroList);
+    gameMap.getGameObjects().add(hero);
+    gameMap.getGameObjects().add(skeleton1);
+    gameMap.getGameObjects().add(skeleton2);
+    gameMap.getGameObjects().add(skeleton3);
+    gameMap.getGameObjects().add(boss);
+    gameMap.getCharacterList().add(hero);
+    gameMap.getCharacterList().add(skeleton1);
+    gameMap.getCharacterList().add(skeleton2);
+    gameMap.getCharacterList().add(skeleton3);
+    gameMap.getCharacterList().add(boss);
+
+
+
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    for (List<GameObject> temp : gameMap.getGameObjects()) {
-      for (GameObject temp2 : temp) {
-        PositionedImage image = new PositionedImage(temp2.getCostume(), temp2.getPosX(), temp2.getPosY());
-        image.draw(graphics);
-      }
+    for (GameObject temp : gameMap.getGameObjects()) {
+      PositionedImage image = new PositionedImage(temp.getCostume(), temp.getPosX(), temp.getPosY());
+      image.draw(graphics);
     }
   }
   public static void main(String[] args) {
