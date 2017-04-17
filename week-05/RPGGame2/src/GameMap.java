@@ -77,17 +77,22 @@ public class GameMap {
     return false;
   }
 
+
+  public boolean anotherisWall(int x, int y) {
+    return floorMap[x/72][y/72] == 1;
+  }
+
   public int[] randCoordinate() {
-    int[] randCoordinate = new int[2];
-    int x = (int) (Math.random() * 10) * 72;
-    int y = (int) (Math.random() * 10) * 72;
-    while (!(isItCharacter(x, y) == false) && (isItFloor(x, y) == true)) {
-      x = (int) (Math.random() * 10) * 72;
-      y = (int) (Math.random() * 10) * 72;
+    int[] coordinates = new int[2];
+    int X = (int) (Math.random() * 10) * 72;
+    int Y = (int) (Math.random() * 10) * 72;
+    while (anotherisWall(X,Y) || isItCharacter(X,Y)) {
+      X = (int) (Math.random() * 10) * 72;
+      Y = (int) (Math.random() * 10) * 72;
     }
-    randCoordinate[0] = x;
-    randCoordinate[1] = y;
-    return randCoordinate;
+    coordinates[0] = X;
+    coordinates[1] = Y;
+    return coordinates;
   }
 
 
