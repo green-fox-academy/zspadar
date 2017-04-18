@@ -7,6 +7,7 @@ public class BassGuitar extends StringInstrument {
   public BassGuitar() {
     this.name = "BassGuitar";
     this.numberOfStrings = 4;
+    this.sound ="Dum-dum-dumm";
   }
 
   public BassGuitar(int numberOfStrings) {
@@ -15,6 +16,6 @@ public class BassGuitar extends StringInstrument {
 
   @Override
   public void play() {
-    System.out.printf(formatForPlay);
+    System.out.printf(formatForPlay,name, numberOfStrings, sound);
   }
 }

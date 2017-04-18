@@ -7,12 +7,13 @@ public class Violin extends StringInstrument {
   public Violin() {
     this.name ="Violin";
     this.numberOfStrings = 4;
+    this.sound="Schreech";
   }
 
 
 
   @Override
   public void play() {
-    System.out.println(formatForPlay);
+    System.out.printf(formatForPlay,name, numberOfStrings, sound);
   }
 }

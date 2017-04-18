@@ -7,6 +7,7 @@ public class ElectricGuitar extends StringInstrument {
   public ElectricGuitar() {
     this.numberOfStrings = 6;
     this.name = "ElectricGuitar";
+    this.sound ="Twang";
   }
 
   public ElectricGuitar(int numberOfStrings) {
@@ -15,6 +16,6 @@ public class ElectricGuitar extends StringInstrument {
 
   @Override
   public void play() {
-    System.out.printf(formatForPlay);
+    System.out.printf(formatForPlay, name, numberOfStrings, sound);
   }
 }

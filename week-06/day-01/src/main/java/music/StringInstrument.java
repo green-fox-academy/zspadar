@@ -14,8 +14,8 @@ public abstract class StringInstrument extends Instrument {
     this.numberOfStrings = number;
   }
 
-  public StringInstrument(String name) {
-    super(name);
+  public StringInstrument(String name, String sound) {
+    super(name, sound);
   }
 
 }
