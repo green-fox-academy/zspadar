@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Created by zsuzsanna.padar on 2017. 04. 19..
@@ -7,16 +8,13 @@ public class SortTheArray {
   public static void main(String[] args) {
     Integer[] numbers = {3, 5, 11, 56, 4, 34, 332};
     System.out.println(Arrays.toString(sortDescendant(numbers)));
-
+    
   }
 
-  public static <T extends Number> int[] sortDescendant(T[] numbers) {
-    int[] descendantNumbers = new int[numbers.length];
+  public static <T extends Number> Integer[] sortDescendant(T[] numbers) {
     Arrays.sort(numbers);
-    for(int i = 0; i < numbers.length; i++) {
-      descendantNumbers[i] = numbers.length - 1;
-    }
-    return descendantNumbers;
+    Collections.reverse(Arrays.asList(numbers));
+    return (Integer[]) numbers;
 
   }
 }
