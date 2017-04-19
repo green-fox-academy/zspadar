@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,5 +11,16 @@ public class ParkingLot {
     for(int i = 0; i < 256; i++){
       carsAtParkingLot.add(new Car(CarType.getRandType(),CarColor.getRandColor()));
     }
+
+    HashMap<CarColor, Integer> colorCounter = new HashMap<>();
+    for(int i = 0; i < carsAtParkingLot.size(); i ++) {
+      Integer counter = colorCounter.get(carsAtParkingLot.get(i).carColor);
+      if (counter == 0) {
+        counter = 0;
+      } else {
+        counter++;
+      }
+    }
+    
   }
 }

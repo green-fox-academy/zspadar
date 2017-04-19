@@ -6,6 +6,10 @@ import java.util.Random;
 public enum CarColor {
   RED, BLUE, GREEN;
 
+  CarColor() {
+  }
+
+
   public static CarColor getRandColor() {
     Random random = new Random();
     int getRand = random.nextInt(CarColor.values().length);
