@@ -17,8 +17,8 @@ public class SplitString {
   public static String[] getSplittedString(String input, int number) {
     String[] splitted = new String[2];
     try {
-      splitted[0] = input.substring(0, number - 1);
-      splitted[1] = input.substring(number, input.length()-1);
+      splitted[0] = input.substring(0, number);
+      splitted[1] = input.substring(number, input.length());
     } catch (IndexOutOfBoundsException e) {
       System.out.println("The number is too big");
     }
