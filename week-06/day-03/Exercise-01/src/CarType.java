@@ -6,7 +6,7 @@ import java.util.Random;
 public enum CarType {
   DODGE, MUSTANG, CHEVROLET, BUICK;
 
-  public static CarType getRandColor() {
+  public static CarType getRandType() {
     Random random = new Random();
     int getRand = random.nextInt(CarColor.values().length);
     return CarType.values()[getRand];
