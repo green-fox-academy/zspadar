@@ -11,12 +11,13 @@ public class ParkingLot {
     for(int i = 0; i < 256; i++){
       carsAtParkingLot.add(new Car(CarType.getRandType(),CarColor.getRandColor()));
     }
+    System.out.println(carsAtParkingLot);
 
 
     HashMap<CarColor, Integer> colorCounter = new HashMap<>();
     for(int i = 0; i < carsAtParkingLot.size(); i ++) {
       Integer counter = colorCounter.get(carsAtParkingLot.get(i).carColor);
-      if (counter == 0) {
+      if (counter == null) {
         counter = 0;
       } else {
         counter++;
@@ -31,11 +32,11 @@ public class ParkingLot {
 
     HashMap<CarType, Integer> typeCounter = new HashMap<>();
     for(int i = 0; i < carsAtParkingLot.size(); i ++) {
-      Integer counter = typeCounter.get(carsAtParkingLot.get(i).carType);
-      if (counter == 0) {
-        counter = 0;
+      Integer counter2 = typeCounter.get(carsAtParkingLot.get(i).carType);
+      if (counter2 == null) {
+        counter2 = 0;
       } else {
-        counter++;
+        counter2++;
       }
     }
 

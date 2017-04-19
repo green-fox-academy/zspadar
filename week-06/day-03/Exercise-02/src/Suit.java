@@ -29,12 +29,6 @@ public enum Suit {
   }
 
 
-
-
-
-
-
-
   public Color getColor() {
     return color;
   }
