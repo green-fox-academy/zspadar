@@ -12,6 +12,7 @@ public class ParkingLot {
       carsAtParkingLot.add(new Car(CarType.getRandType(),CarColor.getRandColor()));
     }
 
+
     HashMap<CarColor, Integer> colorCounter = new HashMap<>();
     for(int i = 0; i < carsAtParkingLot.size(); i ++) {
       Integer counter = colorCounter.get(carsAtParkingLot.get(i).carColor);
@@ -21,6 +22,29 @@ public class ParkingLot {
         counter++;
       }
     }
-    
+
+    for(CarColor color : colorCounter.keySet()){
+      String key = color.toString();
+      String value = colorCounter.get(color).toString();
+      System.out.println(key + " "  + value);
+    }
+
+    HashMap<CarType, Integer> typeCounter = new HashMap<>();
+    for(int i = 0; i < carsAtParkingLot.size(); i ++) {
+      Integer counter = typeCounter.get(carsAtParkingLot.get(i).carType);
+      if (counter == 0) {
+        counter = 0;
+      } else {
+        counter++;
+      }
+    }
+
+    for(CarType type: typeCounter.keySet()){
+      String key = type.toString();
+      String value = colorCounter.get(type).toString();
+      System.out.println(key + " "  + value);
+    }
+
+
   }
 }
