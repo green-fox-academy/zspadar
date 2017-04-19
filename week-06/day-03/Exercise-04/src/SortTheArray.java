@@ -5,8 +5,8 @@ import java.util.Arrays;
  */
 public class SortTheArray {
   public static void main(String[] args) {
-    int[] numbers = {3, 5, 11, 56, 4, 34, 332};
-    System.out.println(sortDescendant(numbers));
+    Integer[] numbers = {3, 5, 11, 56, 4, 34, 332};
+    System.out.println(Arrays.toString(sortDescendant(numbers)));
 
   }
 
