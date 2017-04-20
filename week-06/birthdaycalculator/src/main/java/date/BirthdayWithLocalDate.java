@@ -27,7 +27,11 @@ public class BirthdayWithLocalDate implements date.BirthdayCalculator<LocalDate>
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
     // TODO - return with true if today is the same month+day as date
-    return (date.getMonth() == LocalDate.now().getMonth() && date.getDayOfMonth() == LocalDate.now().getDayOfMonth());
+    if(date.getMonth() == LocalDate.now().getMonth() && date.getDayOfMonth() == LocalDate.now().getDayOfMonth()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   @Override
@@ -40,7 +44,16 @@ public class BirthdayWithLocalDate implements date.BirthdayCalculator<LocalDate>
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
     // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-    return ;
+    LocalDate now = LocalDate.now();
+    int expected;
+    if (now.getDayOfYear() == date.getDayOfYear()) {
+      expected = 0;
+    } else if (now.getDayOfYear() > date.getDayOfYear()) {
+      return LocalDate.of(now.getYear(), 12, 31).getDayOfYear() - now.getDayOfYear() + date.getDayOfYear();
+    } else {
+      return date.getDayOfYear() - now.getDayOfYear();
+    }
+    return expected;
   }
 
   public static void main(String[] args) {
