@@ -12,29 +12,34 @@ public class BirthdayWithLocalDate implements date.BirthdayCalculator<LocalDate>
 
   @Override
   public LocalDate parseDate(String str) {
-    final String EXPECTED_DATE_STR = "2016-11-30";
     // TODO - return with the parsed date; format is: yyyy-MM-dd
-
+    LocalDate localDate = LocalDate.parse(str);
+    return localDate;
   }
 
   @Override
   public String printMonthAndDay(LocalDate date) {
     // TODO - return the date formatted: month & day (MM. dd.)
+    String monthAndDay = date.toString().substring(5, 7) + ". " + date.toString().substring(8) + ".";
+    return monthAndDay ;
   }
 
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
     // TODO - return with true if today is the same month+day as date
+    return (date.getMonth() == LocalDate.now().getMonth() && date.getDayOfMonth() == LocalDate.now().getDayOfMonth());
   }
 
   @Override
   public int calculateAgeInYears(LocalDate birthday) {
     // TODO - return how many years age the input date 'birthday' was
+    return ;
   }
 
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
     // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
+    return ;
   }
 
   public static void main(String[] args) {

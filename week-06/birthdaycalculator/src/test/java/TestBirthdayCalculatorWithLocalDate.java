@@ -1,7 +1,6 @@
 /**
  * Created by zsuzsanna.padar on 2017. 04. 20..
  */
-package date;
 
 import org.junit.Test;
 
@@ -80,6 +79,8 @@ public class TestBirthdayCalculatorWithLocalDate {
     expected = getExpectedDaysToNextAnniversary(localDate);
     assertEquals(expected, birthdayCalculator.calculateDaysToNextAnniversary(localDate));
   }
+
+
 
   private int getExpectedDaysToNextAnniversary(LocalDate date) {
     LocalDate now = LocalDate.now();
