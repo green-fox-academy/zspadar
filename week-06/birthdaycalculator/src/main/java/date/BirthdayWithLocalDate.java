@@ -33,7 +33,8 @@ public class BirthdayWithLocalDate implements date.BirthdayCalculator<LocalDate>
   @Override
   public int calculateAgeInYears(LocalDate birthday) {
     // TODO - return how many years age the input date 'birthday' was
-    return ;
+    int calculatedAge = LocalDate.now().getYear() - birthday.getYear();
+    return calculatedAge;
   }
 
   @Override
