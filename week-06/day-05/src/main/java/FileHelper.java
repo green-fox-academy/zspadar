@@ -24,7 +24,7 @@ public class FileHelper {
 
   public void saveAll(List<Task> taskList) {
     try {
-      FileOutputStream fos = new FileOutputStream("t.tmp");
+      FileOutputStream fos = new FileOutputStream(filePath);
       ObjectOutputStream oos = new ObjectOutputStream(fos);
       oos.writeObject(taskList);
       oos.close();
