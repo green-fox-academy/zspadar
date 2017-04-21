@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,6 +10,7 @@ public class TaskManager {
   private ArrayList<Task> taskList;
   private CSVHelper dataManager;
   List<Command> commands;
+  List<Task> ids;
 
   public TaskManager() {
     commands = new ArrayList<>();
@@ -18,6 +20,7 @@ public class TaskManager {
     commands.add(new CompleteCommand());
     taskList = new ArrayList<>();
     dataManager = new CSVHelper("data.csv");
+    ids = new ArrayList<>();
     load();
   }
 

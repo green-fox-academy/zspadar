@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 /**
  * Created by zsuzsanna.padar on 2017. 04. 21..
  */
-public class Task  {
+public class Task implements Serializable {
   private String name;
   private String status;
   private static final AtomicInteger count = new AtomicInteger(1);
