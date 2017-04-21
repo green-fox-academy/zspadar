@@ -7,11 +7,17 @@ import java.util.List;
 public class TaskManager {
   private ArrayList<Task> taskList;
   private CSVHelper dataManager;
+  List<Command> commands;
 
   public TaskManager() {
-     taskList = new ArrayList<>();
-     dataManager = new CSVHelper("data.csv");
-     load();
+    commands = new ArrayList<>();
+    commands.add(new RemoveCommand());
+    commands.add(new ListCommand());
+    commands.add(new AddCommand());
+    commands.add(new CompleteCommand());
+    taskList = new ArrayList<>();
+    dataManager = new CSVHelper("data.csv");
+    load();
   }
 
   private void save() {
