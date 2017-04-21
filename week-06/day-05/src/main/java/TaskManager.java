@@ -30,17 +30,16 @@ public class TaskManager {
     taskList = dataManager.load();
   }
 
-  public void printUsage() {
+  public String printUsage() {
     String help = "\n" +
             "Java ToDo Application" + "\n" +
             "=====================" + "\n" +
             "\n" +
-            "Command line arguments: " + "\n" +
-            "-l List all the tasks" + "\n" +
-            "-a Adds a new task" + "\n"  +
-            "-r Removes a task" + "\n" +
-            "-c Completes a task";
-    System.out.println(help);
+            "Command line arguments: " + "\n";
+    for (Command command: commands) {
+      help+= command.getUsage() + "\n";
+    }
+    return help;
   }
 
   public void addTask(String name) {
