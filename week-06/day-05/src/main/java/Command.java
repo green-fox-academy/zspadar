@@ -9,6 +9,7 @@ public abstract  class Command {
     this.flag = flag;
     this.usageDescription = usageDescription;
   }
+
   public abstract String execute();
 
   public String getFlag() {
