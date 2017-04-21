@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -41,6 +42,25 @@ public class TaskManager {
     }
     return help;
   }
+
+  public String runCommands(String[] args) {
+    if (args.length == 0) {
+      return printUsage();
+    } else if (args[0].equals("-l")) {
+      printList();
+    } else if (args[0].equals("-a")) {
+      addTask( String.join(" ", Arrays.copyOfRange(args, 1, args.length)) );
+    } else if (args[0].equals("-r")){
+      removeTask(Integer.parseInt(args[1]));
+    } else if (args[0].equals("-c")) {
+      completeTask(Integer.parseInt(args[1]));
+    } else {
+      System.out.println("Unsupported argument");
+    }
+    return "";
+  }
+
+
 
   public void addTask(String name) {
     taskList.add(new Task(name));
