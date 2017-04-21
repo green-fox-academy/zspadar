@@ -1,4 +1,6 @@
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -39,6 +41,16 @@ public class FileHelper {
       return list;
     }
   }
+  public void loadAll() {
+    try {
+      FileInputStream fis = new FileInputStream(filePath);
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      List<Task> taskList = (List<Task>) ois.readObject();
+      ois.close();
+    } catch (Exception e) {}
+  }
+
+
 
 
 }
