@@ -1,4 +1,5 @@
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 
 /**
  * Created by zsuzsanna.padar on 2017. 04. 21..
@@ -14,18 +15,16 @@ public class Task  {
     status = "incomplete";
   }
 
-  public Task(String name, String status) {
-    this.name = name;
-    this.status = status;
-  }
 
-  public Task(String name, String status, int id) {
+  public Task(String name, String status) {
     this.name = name;
     this.status = status;
     this.id = count.incrementAndGet();
   }
 
+
   public void setTaskDone() {
+
     status = "done";
   }
 
@@ -33,6 +32,7 @@ public class Task  {
 
     return status.equals("done");
   }
+
 
   public String getName() {
 
@@ -44,9 +44,13 @@ public class Task  {
     return status;
   }
 
+  public int getId() {
+    return id;
+  }
+
   public String getDescription() {
     String statusMark = status.equals("done") ? "[x]" : "[ ]";
-    return statusMark + " " + name;
+    return id + statusMark + " " + name;
   }
 
 }

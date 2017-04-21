@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zsuzsanna.padar on 2017. 04. 06..
+ * Created by zsuzsanna.padar on 2017. 04. 21..
  */
 public class TaskManager {
   private ArrayList<Task> taskList;
@@ -15,10 +15,12 @@ public class TaskManager {
   }
 
   private void save() {
+
     dataManager.save(taskList);
   }
 
   private void load() {
+
     taskList = dataManager.load();
   }
 
