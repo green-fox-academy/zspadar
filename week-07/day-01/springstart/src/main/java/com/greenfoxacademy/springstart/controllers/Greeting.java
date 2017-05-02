@@ -1,7 +1,6 @@
 package com.greenfoxacademy.springstart.controllers;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -10,9 +9,13 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@AllArgsConstructor
+
 public class Greeting {
   private long id;
   private String content;
 
+  public Greeting(long id, String content) {
+    this.id = id;
+    this.content = content;
+  }
 }
