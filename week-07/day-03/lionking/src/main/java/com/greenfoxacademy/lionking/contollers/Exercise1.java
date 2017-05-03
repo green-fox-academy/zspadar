@@ -1,6 +1,7 @@
 package com.greenfoxacademy.lionking.contollers;
 
 import com.greenfoxacademy.lionking.model.BankAccount;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by zsuzsanna.padar on 2017. 05. 03..
  */
-@RestController
+@Controller
 public class Exercise1 {
 
   @RequestMapping(value = "/Exercise1")
