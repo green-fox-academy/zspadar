@@ -10,7 +10,7 @@
   <thead>
   <tbody>
   <tr th:each="bankAccount : ${bankAccounts}">
-    <td th:class="${bankAccount.name == 'Simba'} ? 'King' : ''  " ></td>
+    <td th:class="${bankAccount.name == 'Simba' ? 'King' : ''  }" ></td>
     <td th:text="'Index: '" ></td>
     <td th:text="${bankAccountStat.count} " ></td>
     <td th:text="'Name: '" ></td>
@@ -21,7 +21,7 @@
     <td th:text="'animal type: ' "></td>
     <td th:text="${bankAccount.animalType} "></td>
       <tr th:switch="${bankAccount.animalType}" >
-        <td th:case="'hyena"></td>
+        <td th:case="'hyena'"></td>
         <td th:text="'Bad guy'"></td>
         <td th:case="*" ></td>
         <td th:text="'Good guy'" ></td>
