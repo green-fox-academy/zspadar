@@ -1,4 +1,4 @@
-package com.greenfoxacademy.lionking.contollers;
+package com.greenfoxacademy.lionking.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
