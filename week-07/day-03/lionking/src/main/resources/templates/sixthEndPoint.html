@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
 </head>
 <body>
-<p th:each="bankAccount : ${bankAccounts}"  th:text="'Index: ' + ${bankAccountStat.index} +'Name: ' + ${bankAccount.name} + ', ' + 'balance: ' + ${#numbers.formatDecimal(bankAccount.balance, 1, 2)}  +', ' + 'animal type: ' + ${bankAccount.animalType}" >exercise1</p>
+<p th:each="bankAccount : ${bankAccounts}"  th:text="'Index: ' + ${bankAccountStat.index} +'Name: ' + ${bankAccount.name} + ', ' + 'balance: ' + ${#numbers.formatDecimal(bankAccount.balance, 1, 2)}  +', ' + 'animal type: ' + ${bankAccount.animalType}" >exercise6</p>
 
 </body>
 </html>
