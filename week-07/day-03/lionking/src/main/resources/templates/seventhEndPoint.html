@@ -6,8 +6,8 @@
   <meta charset="utf-8" />
 </head>
 <body>
-<p th:each="bankAccount : ${bankAccounts}" th:if="${bankAccount.name == 'Simba'} "
-   th:class="King" th:text="'Index: ' + ${bankAccountStat.index} +'Name: '
+<p th:each="bankAccount : ${bankAccounts}" th:class="${bankAccount.name == 'Simba'} ? 'King' : ''  "
+    th:text="'Index: ' + ${bankAccountStat.index} +'Name: '
    + ${bankAccount.name} + ', ' + 'balance: ' + ${#numbers.formatDecimal(bankAccount.balance, 1, 2)}  +', '
    + 'animal type: ' + ${bankAccount.animalType}" >exercise7</p>
 
