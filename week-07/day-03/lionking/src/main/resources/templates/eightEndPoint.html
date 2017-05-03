@@ -6,11 +6,25 @@
   <meta charset="utf-8" />
 </head>
 <body>
-<p th:each="bankAccount : ${bankAccounts}" th:class="${bankAccount.name == 'Simba'} ? 'King' : ''  "
-   th:text="'Index: ' + ${bankAccountStat.index} +'Name: '
-   + ${bankAccount.name} + ', ' + 'balance: ' + ${#numbers.formatDecimal(bankAccount.balance, 1, 2)}  +', ' +
-   + 'animal type: ' + ${bankAccount.animalType} +
-   'Side: ' + ${bankAccount.animalType != 'hyena' ? 'Good guy' : 'Bad guy' }" >exercise8</p>
-
+<table>
+  <thead>
+    <tbody>
+      <tr th:each="bankAccount : ${bankAccounts}">
+        <td th:class="${bankAccount.name == 'Simba'} ? 'King' : ''  " ></td>
+        <td th:text="'Index: '" ></td>
+        <td th:text="${bankAccountStat.count} " ></td>
+        <td th:text="'Name: '" ></td>
+        <td th:text="${bankAccount.name}" ></td>
+        <td th:text="', '" ></td>
+        <td th:text="'balance: '" ></td>
+        <td th:text="${#numbers.formatDecimal(bankAccount.balance, 1, 2)} "></td>
+        <td th:text="'animal type: ' "></td>
+        <td th:text="${bankAccount.animalType} "></td>
+        <td th:text="'Side: '"></td>
+        <td th:text="${bankAccount.animalType != 'hyena'  ? 'Good guy' : 'Bad guy'}"></td>
+      </tr>
+    </tbody>
+  </thead>
+</table>
 </body>
 </html>

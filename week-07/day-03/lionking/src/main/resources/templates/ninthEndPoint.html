@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thymeleaf Exercise #</title>
+  <link rel="stylesheet" th:href="@{/style.css}" />
+  <meta charset="utf-8" />
+</head>
+<body>
+<tr th:each="bankAccount : ${bankAccounts}"
+<td th:class="${bankAccount.name == 'Simba'} ? 'King' : ''  " ></td>
+<td th:text="'Index: ' + ${bankAccountStat.index} +'Name: '
+   + ${bankAccount.name} + ', ' + 'balance: ' + ${#numbers.formatDecimal(bankAccount.balance, 1, 2)}  +', ' +
+   + 'animal type: ' + ${bankAccount.animalType} ></
+>exercise9</tr>
+
+</body>
+</html>
