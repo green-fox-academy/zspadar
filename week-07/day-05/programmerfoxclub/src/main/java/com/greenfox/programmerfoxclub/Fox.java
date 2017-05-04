@@ -16,12 +16,14 @@ public class Fox {
 
   public Fox() {
     this.trickList = new ArrayList<>();
-    trickList.add("photographic memory");
-    trickList.add("fly");
-    trickList.add("can eat unlimited amount of toltottkaposzta");
+//    trickList.add("photographic memory");
+//    trickList.add("fly");
+//    trickList.add("can eat unlimited amount of toltottkaposzta");
     this.name = "Mr. Green";
-    this.drink = "lemonade";
-    this.food = "pizza";
+    this.food = "salad";
+    this.drink = "water";
+//    this.drink = "lemonade";
+//    this.food = "pizza";
   }
 
   public int getTrickListSize() {

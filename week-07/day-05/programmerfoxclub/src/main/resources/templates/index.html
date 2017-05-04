@@ -6,15 +6,18 @@
   <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-<img src="greenfox.png"/>
-<p th:text="'This is ' + ${fox.name} + '. Currently living on '
-+ ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTrickListSize()} + ' tricks.'"></p>
-<h1>
-  Known tricks
-</h1>
-  <ul>
-    <li th:each="trick : ${fox.trickList}" th:text="${trick}"> </li>
-  </ul>
+  <img src="greenfox.png" alt=""/>
+  <p th:text="'This is ' + ${fox.name} + '. Currently living on '
+  + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTrickListSize()} + ' tricks.'"></p>
+  <h1>
+    Known tricks
+  </h1>
+    <span th:if="${fox.getTrickListSize() == 0}">You know no tricks, yet. Go and learn some.</span>
+    <span th:if="${fox.getTrickListSize() > 0}">
+      <ul>
+        <li th:each="trick : ${fox.trickList}" th:text="${trick}"> </li>
+      </ul>
+    </span>
 
 </body>
 </html>
