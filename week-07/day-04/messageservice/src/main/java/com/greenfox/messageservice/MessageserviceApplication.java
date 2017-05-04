@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+
 @SpringBootApplication
 public class MessageserviceApplication implements CommandLineRunner {
 
@@ -21,3 +21,4 @@ public class MessageserviceApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		messageProceeder.processMessage("Hi Barba, How are you?", "office@greenfox.com");
 	}
+}

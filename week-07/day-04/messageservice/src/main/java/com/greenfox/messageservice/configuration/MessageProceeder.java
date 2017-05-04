@@ -1,5 +1,7 @@
 package com.greenfox.messageservice.configuration;
 
+import com.greenfox.messageservice.MessageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,9 +10,20 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class MessageProceeder {
-  @Bean
-  public MessageProceeder messageProceeder(){
-    return new MessageProceeder();
-  }
+  @Autowired
+  MessageService messageService;
+  String message;
+  String email;
 
+  public MessageProceeder() {
+    messageService = new MessageService() {
+      @Override
+      public void sendMessage(String message, String email) {
+
+      }
+    };
+  }
+  public void processMessage(String message, String email){
+    messageService.sendMessage(message, email);
+  }
 }
