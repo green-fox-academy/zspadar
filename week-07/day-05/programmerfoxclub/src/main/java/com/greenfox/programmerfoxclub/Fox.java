@@ -2,10 +2,12 @@ package com.greenfox.programmerfoxclub;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 04..
  */
+@Component
 public class Fox {
   String name;
   List<String> trickList;

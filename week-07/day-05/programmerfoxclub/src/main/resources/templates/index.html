@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8"/>
   <title>Programmer Fox Club</title>
+  <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-<ul>
-  <li><a href="https://www.index.hu">Information</a></li>
-</ul>
-<img src="greenfox.jpg"/>
+<img src="greenfox.png"/>
 <p th:text="'This is ' + ${fox.name} + '. Currently living on '
-+ ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTrickListSize()} + ' tricks.'"/>
++ ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTrickListSize()} + ' tricks.'"></p>
 <h1>
   Known tricks
 </h1>
   <ul>
     <li th:each="trick : ${fox.trickList}" th:text="${trick}"> </li>
   </ul>
-<body>
 
 </body>
 </html>

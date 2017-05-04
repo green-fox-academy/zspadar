@@ -14,7 +14,7 @@ public class MainController {
   @Autowired
   Fox fox;
 
-  @RequestMapping("/")
+  @RequestMapping(value = "/")
   public String index(Model model){
     model.addAttribute("fox", fox);
     return "index";
