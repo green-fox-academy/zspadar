@@ -9,6 +9,13 @@ import java.util.List;
 public class Trick {
   List<String> tricks = new ArrayList();
 
+  public Trick(){
+    tricks.add("Can eat unlimited amount of toltottkaposzta");
+    tricks.add("protographic memory");
+    tricks.add("power sleep");
+  }
+
+
   public  void addTrick(String userInput) {
     tricks.add(userInput);
   }
