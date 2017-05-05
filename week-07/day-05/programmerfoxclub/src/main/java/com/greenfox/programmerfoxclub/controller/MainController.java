@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 04..
@@ -18,6 +19,11 @@ public class MainController {
   public String index(Model model){
     model.addAttribute("fox", fox);
     return "index";
+  }
+
+  @RequestMapping(value = "/nutritionStore")
+  public String nutritionStore(@RequestParam ("new nutrition") String param) throws InterruptedException{
+    return "nutritionStore";
   }
 
 }
