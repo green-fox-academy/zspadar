@@ -53,5 +53,12 @@ public class MainController {
     return "redirect:/";
   }
 
+  @PostMapping(value = "/learnTrick")
+  public String  learnTricks(Model model, @RequestParam("Trick") String trick){
+    fox.addTrick(trick);
+    model.addAttribute("trick", trick);
+    return "redirect:/";
+  }
+
 
 }
