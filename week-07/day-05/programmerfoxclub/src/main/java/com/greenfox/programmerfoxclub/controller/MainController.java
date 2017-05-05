@@ -36,5 +36,11 @@ public class MainController {
     fox.setFood(food);
     return "redirect:/";
   }
+  @RequestMapping(value = "/trickCenter")
+  public String trickCenter(Model model) {
+    model.addAttribute("fox", fox);
+    return "trickCenter";
+  }
+
 
 }
