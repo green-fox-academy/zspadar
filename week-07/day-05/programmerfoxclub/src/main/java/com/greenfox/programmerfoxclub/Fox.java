@@ -48,4 +48,8 @@ public class Fox {
     return trickList;
   }
 
+  public void addTrick( String input) {
+    trickList.add(input);
+  }
+
 }

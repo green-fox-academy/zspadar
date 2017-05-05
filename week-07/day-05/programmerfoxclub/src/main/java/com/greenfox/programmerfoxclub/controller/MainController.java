@@ -42,5 +42,11 @@ public class MainController {
     return "trickCenter";
   }
 
+  @PostMapping(value = "/addTrick")
+  public String  addTricks(@RequestParam("Trick") String trick){
+    fox.addTrick(trick);
+    return "redirect:/";
+  }
+
 
 }
