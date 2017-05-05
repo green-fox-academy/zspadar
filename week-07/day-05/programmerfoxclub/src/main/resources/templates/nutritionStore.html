@@ -14,7 +14,7 @@
   <form action="/addNutrition" method="post">
     <label>Food</label>
     <select name="Food">
-      <option th:value="stuffedcabbage">stuffed cabbage</option>
+      <option th:value="'stuffedcabbage'">stuffed cabbage</option>
       <option th:value="carrot">carrot</option>
       <option th:value="chicken">chicken</option>
     </select>
@@ -22,7 +22,7 @@
     <select name="Drink">
       <option th:value="water">water</option>
       <option th:value="tea">tea</option>
-      <option th:value="mountainDew">mountain dew</option>
+      <option th:value="'mountain dew'">mountain dew</option>
     </select>
     <button type="submit">Change</button>
   </form>
