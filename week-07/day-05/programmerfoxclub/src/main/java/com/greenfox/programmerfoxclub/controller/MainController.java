@@ -42,13 +42,14 @@ public class MainController {
   @RequestMapping(value = "/trickCenter")
   public String trickCenter(Model model) {
     model.addAttribute("fox", fox);
-    model.addAttribute("list", tricks);
+    model.addAttribute("tricks", tricks);
     return "trickCenter";
   }
 
   @PostMapping(value = "/addTrick")
-  public String  addTricks(@RequestParam("Trick") String trick){
+  public String  addTricks(Model model, @RequestParam("Trick") String trick){
     tricks.addTrick(trick);
+    model.addAttribute("trick", trick);
     return "redirect:/";
   }
 
