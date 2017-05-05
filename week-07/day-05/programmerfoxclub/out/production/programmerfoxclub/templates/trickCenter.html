@@ -11,11 +11,13 @@
   <li><a href="/nutritionStore">Nutrition Store</a></li>
   <li><a href="/trickCenter">Trick Center</a></li>
 </ul>
-<form action="/addTrick" method="post">
+<form th:action="@{/addTrick}" th:object="${fox}" method="post">
+  <input type="list" value="trick">trick</input>
   <label>Trick</label>
   <select name="Trick">
     <option th:each="trick : ${tricks}" th:value="${trick}" th:text="${trick}"></option>
   </select>
+  <input type="learn"></input>
   <button type="submit">Learn</button>
 </form>
 </body>

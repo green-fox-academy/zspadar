@@ -15,10 +15,12 @@ public class Trick {
     tricks.add("power sleep");
   }
 
-
   public  void addTrick(String userInput) {
     tricks.add(userInput);
   }
+   public List<String> getTricks(){
+    return tricks;
+   }
 
 
 
