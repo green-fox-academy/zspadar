@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Programmer Fox Club</title>
+  <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<ul>
+  <li><a href="/">Information</a></li>
+  <li><a href="/nutritionStore">Nutrition Store</a></li>
+  <li><a href="/trickCenter">Nutrition Store</a></li>
+</ul>
+<form action="/addTrick" method="post">
+  <label>Trick</label>
+  <select name="Trick">
+    <option th:value="canEatUnlimitedAmount">can eat unlimited amount</option>
+    <option th:value="fly">fly</option>
+    <option th:value="photographicMemory">photographic memory</option>
+  </select>
+  <button type="submit">Add</button>
+</form>
+</body>
+</html>
