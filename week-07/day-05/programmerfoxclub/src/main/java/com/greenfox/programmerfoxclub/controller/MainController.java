@@ -22,7 +22,9 @@ public class MainController {
   }
 
   @RequestMapping(value = "/nutritionStore")
-  public String nutritionStore(@RequestParam ("new nutrition") String param) throws InterruptedException{
+  public String nutritionStore(Model model){
+    model.addAttribute("fox", fox);
+
     return "nutritionStore";
   }
 

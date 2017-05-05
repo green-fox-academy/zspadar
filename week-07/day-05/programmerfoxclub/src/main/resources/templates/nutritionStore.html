@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8"/>
   <title>Programmer Fox Club</title>
@@ -10,5 +10,10 @@
     <li><a href="index.html">Information</a></li>
     <li><a href="nutritionStore.html">Nutrition Store</a></li>
   </ul>
+  <form action="nutritionStore.html" method="post">
+    <input type="text" name="Food" placeholder="food">Food</input>
+    <input type="text" name="Drink" placeholder="drink">Drink</input>
+    <button type="submit">Change</button>
+  </form>
 </body>
 </html>
