@@ -47,16 +47,16 @@ public class MainController {
   }
 
   @PostMapping(value = "/addTrick")
-  public String  addTricks(Model model, @RequestParam("Trick") String trick){
+  public String  addTricks(Model model, @RequestParam(value = "tricks", required = false, defaultValue = "gh") String trick){
     tricks.addTrick(trick);
-    model.addAttribute("trick", trick);
+    model.addAttribute("tricks", tricks);
     return "redirect:/";
   }
 
   @PostMapping(value = "/learnTrick")
-  public String  learnTricks(Model model, @RequestParam("Trick") String trick){
+  public String  learnTricks(Model model, @RequestParam(value = "Trick", required = false, defaultValue = "gh") String trick){
     fox.addTrick(trick);
-    model.addAttribute("trick", trick);
+    model.addAttribute("Trick", trick);
     return "redirect:/";
   }
 
