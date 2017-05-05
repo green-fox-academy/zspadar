@@ -5,6 +5,7 @@ import com.greenfox.programmerfoxclub.model.Nutrition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,6 +29,12 @@ public class MainController {
     model.addAttribute("fox", fox);
     model.addAttribute("nutrition", nutrition);
     return "nutritionStore";
+  }
+  @PostMapping(value = "/addNutrition")
+  public String addNutrition(@RequestParam("Food") String food, @RequestParam("Drink") String drink ) {
+    fox.setDrink(drink);
+    fox.setFood(food);
+    return "redirect:/";
   }
 
 }
