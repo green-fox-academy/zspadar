@@ -2,6 +2,7 @@ package com.greenfox.programmerfoxclub.controller;
 
 import com.greenfox.programmerfoxclub.model.Fox;
 import com.greenfox.programmerfoxclub.model.Nutrition;
+import com.greenfox.programmerfoxclub.model.Trick;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ public class MainController {
   @Autowired
   Fox fox;
   Nutrition nutrition;
+  Trick tricks;
+
 
   @RequestMapping(value = "/")
   public String index(Model model){
@@ -39,12 +42,13 @@ public class MainController {
   @RequestMapping(value = "/trickCenter")
   public String trickCenter(Model model) {
     model.addAttribute("fox", fox);
+    model.addAttribute("list", tricks);
     return "trickCenter";
   }
 
   @PostMapping(value = "/addTrick")
   public String  addTricks(@RequestParam("Trick") String trick){
-    fox.addTrick(trick);
+    tricks.addTrick(trick);
     return "redirect:/";
   }
 
