@@ -20,5 +20,5 @@ public class ToDo {
     this.isUrgent = false;
     this.isDone = false;
   }
-  
+
 }
