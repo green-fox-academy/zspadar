@@ -1,4 +1,4 @@
-package com.greenfox.listingtodos;
+package com.greenfox.listingtodos.model;
 
 import lombok.Getter;
 import lombok.Setter;

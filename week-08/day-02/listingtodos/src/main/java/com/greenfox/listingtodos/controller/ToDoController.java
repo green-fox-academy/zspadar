@@ -1,5 +1,7 @@
 package com.greenfox.listingtodos.controller;
 
+import com.greenfox.listingtodos.repository.ToDoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,16 +14,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(value = "/todo")
 public class ToDoController {
+  private ToDoRepository toDoRepository;
 
-  @RequestMapping(value = "/", method= RequestMethod.GET)
-  @ResponseBody
-  public String list2(Model model) {
-    return "This is my first todo!";
+
+  public ToDoController(ToDoRepository toDoRepository) {
+    this.toDoRepository = toDoRepository;
   }
 
-  @RequestMapping(value = "/list", method = RequestMethod.GET)
-  @ResponseBody
+  @RequestMapping({"/", "/list"}  method= RequestMethod.GET)
   public String list(Model model) {
-    return "This is my first todo!";
+    model.addAttribute("todos", toDoRepository.findAll());
+    return "todo";
   }
+  
+
 }
