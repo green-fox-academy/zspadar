@@ -29,8 +29,8 @@ public class ToDo {
 
   public ToDo( String title, boolean isUrgent, boolean isDone) {
     this.title = title;
-    this.isUrgent = false;
-    this.isDone = false;
+    this.isUrgent = isUrgent;
+    this.isDone = isDone;
   }
 
 
@@ -39,12 +39,12 @@ public class ToDo {
     return id + ": " + title;
   }
 
-  public String isDone() {
-    return String.valueOf(isDone);
+  public boolean isDone() {
+    return isDone;
   }
 
-  public String isUrgent() {
-    return String.valueOf(isUrgent);
+  public boolean isUrgent() {
+    return isUrgent;
   }
 
 }

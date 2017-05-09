@@ -19,7 +19,7 @@ public class ListingtodosApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		toDoRepository.save(new ToDo( "Start the day",true, false));
-		toDoRepository.save(new ToDo( "Finish H2 workshop1", true, false));
+		toDoRepository.save(new ToDo( "Finish H2 workshop1", true, true));
 		toDoRepository.save(new ToDo( "Finish JPA Workshop2", true, false));
 		toDoRepository.save(new ToDo("Create a CRUD project", true, false));
 	}
