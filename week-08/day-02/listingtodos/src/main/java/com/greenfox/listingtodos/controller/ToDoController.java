@@ -21,11 +21,10 @@ public class ToDoController {
     this.toDoRepository = toDoRepository;
   }
 
-  @RequestMapping({"/", "/list"}  method= RequestMethod.GET)
+  @RequestMapping(value={"/", "/list"},   method= RequestMethod.GET)
   public String list(Model model) {
     model.addAttribute("todos", toDoRepository.findAll());
     return "todo";
   }
-  
 
 }
