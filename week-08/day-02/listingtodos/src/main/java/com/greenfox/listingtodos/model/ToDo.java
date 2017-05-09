@@ -23,6 +23,7 @@ public class ToDo {
   String title;
   boolean isUrgent;
   boolean isDone;
+
   public ToDo(){
   }
 
@@ -32,9 +33,18 @@ public class ToDo {
     this.isDone = false;
   }
 
+
   @Override
   public String toString() {
     return id + ": " + title;
+  }
+
+  public String isDone() {
+    return String.valueOf(isDone);
+  }
+
+  public String isUrgent() {
+    return String.valueOf(isUrgent);
   }
 
 }
