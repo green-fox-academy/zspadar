@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,14 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DoublingController {
 
-  @RequestMapping(value = "/doubling/{input}", method = RequestMethod.GET)
-  public Doubling getReceived (@PathVariable("input") int received) {
+  @RequestMapping(value = "/doubling", method = RequestMethod.GET)
+  public Doubling getReceived (@RequestParam("input") int received) {
 
       return new Doubling(received);
   }
 
-  @ExceptionHandler(MissingServletRequestParameterException.class)
-    public ExceptionController getError(MissingServletRequestParameterException ex){
+  @ExceptionHandler(Exception.class)
+    public ExceptionController getError(){
     return new ExceptionController("Please provide an input!");
   }
 

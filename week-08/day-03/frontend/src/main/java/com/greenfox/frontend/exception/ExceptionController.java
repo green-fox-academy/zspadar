@@ -5,7 +5,7 @@ package com.greenfox.frontend.exception;
  */
 
 public class ExceptionController {
-  String error;
+  private String error;
 
   public ExceptionController(String error) {
     this.error= error;
