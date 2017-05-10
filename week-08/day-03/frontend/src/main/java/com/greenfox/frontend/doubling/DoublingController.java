@@ -1,5 +1,8 @@
 package com.greenfox.frontend.doubling;
 
+import com.greenfox.frontend.exception.ExceptionController;
+import jdk.nashorn.internal.runtime.regexp.joni.exception.ErrorMessages;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +19,11 @@ public class DoublingController {
   public Doubling getReceived (@PathVariable("input") int received) {
 
       return new Doubling(received);
+  }
 
-
-
+  @ExceptionHandler(MissingServletRequestParameterException.class)
+    public ExceptionController getError(MissingServletRequestParameterException ex){
+    return new ExceptionController("Please provide an input!");
   }
 
 
