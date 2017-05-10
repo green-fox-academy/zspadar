@@ -19,7 +19,7 @@ public class Response {
   }
 
   public int sumIt(int until) {
-    int result = 0;
+    result = 0;
     for(int i = until; i > 0 ; i--) {
       result += i;
     }
@@ -27,11 +27,11 @@ public class Response {
   }
 
   public  int factorIt(int until) {
-
     if (until  == 1) {
       return 1;
     } else {
       return result = until * factorIt(until - 1);
     }
   }
+  
 }
