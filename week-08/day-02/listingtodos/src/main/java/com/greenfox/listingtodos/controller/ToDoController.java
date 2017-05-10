@@ -29,6 +29,10 @@ public class ToDoController {
   }
 
   @RequestMapping(value = "/?isActive=true")
-  public String list2(@RequestParam())
+  public String list(Model model, @RequestParam(value = "isActive", defaultValue = "false") String isActive) {
+    model.addAttribute("isActive", isActive);
+    model.addAttribute("todos", toDoRepository.findAll());
+    return "todo3";
+  }
 
 }
