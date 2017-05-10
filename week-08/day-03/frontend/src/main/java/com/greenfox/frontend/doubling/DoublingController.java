@@ -1,6 +1,5 @@
-package com.greenfox.frontend.controller;
+package com.greenfox.frontend.doubling;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,16 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by zsuzsanna.padar on 2017. 05. 10..
  */
-@Controller
-public class MainController {
+@RestController
+public class DoublingController {
 
-  @RequestMapping(value = "/")
-  public String render(){
-    return "index";
+  @RequestMapping(value = "/doubling/{input}", method = RequestMethod.GET)
+  public Doubling getReceived (@PathVariable("input") int received) {
+
+      return new Doubling(received);
+
+
   }
 
-
 }
-
-
-
