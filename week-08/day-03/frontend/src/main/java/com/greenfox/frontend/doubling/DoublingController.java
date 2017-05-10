@@ -1,5 +1,6 @@
 package com.greenfox.frontend.doubling;
 
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,8 @@ public class DoublingController {
       return new Doubling(received);
 
 
+
   }
+
 
 }
