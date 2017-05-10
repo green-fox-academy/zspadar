@@ -27,5 +27,4 @@ public class DoublingController {
     return new ExceptionController("Please provide an input!");
   }
 
-
 }
