@@ -5,18 +5,18 @@ package com.greenfox.frontend.doubling;
  */
 public class Doubling {
   int received;
-  int doubled;
+  int result;
 
   public Doubling(int received) {
     this.received = received;
-    this.doubled = received * 2;
+    this.result = received * 2;
   }
 
   public int getReceived() {
     return received;
   }
-  public int getDoubled() {
-    return doubled;
+  public int getResult() {
+    return result;
   }
 
 

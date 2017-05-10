@@ -4,23 +4,13 @@ package com.greenfox.frontend.greeting;
  * Created by zsuzsanna.padar on 2017. 05. 10..
  */
 public class Greeting {
-  String name;
-  String title;
+  String welcome_message;
 
-  public Greeting(String name, String title) {
-    this.name = name;
-    this.title = title;
+  public Greeting(String welcome_message) {
+    this.welcome_message = welcome_message;
   }
 
-  public String getName() {
-    return name;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public String getNameAndTitle(String name, String title) {
-    return "O, hi there, " + name + ", " + "my dear " + title +" !";
+  public String getWelcome_message() {
+    return welcome_message;
   }
 }
