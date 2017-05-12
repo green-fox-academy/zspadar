@@ -7,6 +7,8 @@ import com.greenfox.zspadar.reddit.services.PostRepository;
 
 import java.util.Iterator;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,6 +25,15 @@ public class PostController {
   @GetMapping("/posts")
   public Posts getPosts() {
     Posts posts = new Posts();
+    Iterable<Post> repoPosts = postRepository.findAll();
+    posts.setPosts(repoPosts);
+    return posts;
+  }
+
+  @PostMapping("/posts")
+  public Posts getPosts(@RequestBody Post post) {
+    Posts posts = new Posts();
+    postRepository.save(post);
     Iterable<Post> repoPosts = postRepository.findAll();
     posts.setPosts(repoPosts);
     return posts;
