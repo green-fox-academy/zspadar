@@ -1,6 +1,12 @@
 package com.greenfox.zspadar.reddit.controller;
 
+
+import com.greenfox.zspadar.reddit.model.Post;
+import com.greenfox.zspadar.reddit.model.Posts;
 import com.greenfox.zspadar.reddit.services.PostRepository;
+
+import java.util.Iterator;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,4 +19,16 @@ public class PostController {
   public PostController(PostRepository postRepository) {
     this.postRepository = postRepository;
   }
+
+  @GetMapping("/posts")
+  public Posts getPosts() {
+    Posts posts = new Posts();
+    Iterable<Post> repoPosts = postRepository.findAll();
+    posts.setPosts(repoPosts);
+    return posts;
+  }
+
+
+
+
 }

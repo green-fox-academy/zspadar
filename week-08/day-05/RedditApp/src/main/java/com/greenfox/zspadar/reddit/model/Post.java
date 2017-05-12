@@ -16,7 +16,7 @@ public class Post {
 
   String title;
   String href;
-  
+
   int timestamp;
   int score;
 
