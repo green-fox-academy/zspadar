@@ -13,9 +13,10 @@ public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   int id;
-  
+
   String title;
   String href;
+  
   int timestamp;
   int score;
 
