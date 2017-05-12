@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 12..
@@ -18,8 +17,6 @@ public class Post {
 
   String title;
   String href;
-
-
   Timestamp timestamp;
   int score;
 
@@ -69,4 +66,5 @@ public class Post {
   public void downVote() {
     score--;
   }
+
 }
