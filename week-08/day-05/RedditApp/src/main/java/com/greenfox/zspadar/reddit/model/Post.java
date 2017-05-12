@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.hibernate.annotations.UpdateTimestamp;
+;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 12..
@@ -14,7 +14,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Post {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  int id;
+  long id;
 
   String title;
   String href;
@@ -24,25 +24,25 @@ public class Post {
   int score;
 
   public Post() {
-    this.timestamp = new Timestamp(System.currentTimeMillis() % 1000);
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = 0;
   }
 
   public Post(String title, String href) {
     this.title = title;
     this.href = href;
-    this.timestamp = new Timestamp(System.currentTimeMillis() % 1000);
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = 0;
   }
 
   public Post(String title, String href, Timestamp timestamp, int score) {
     this.title = title;
     this.href = href;
-    this.timestamp = new Timestamp(System.currentTimeMillis() % 1000);
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = score;
   }
 
-  public int getId() {
+  public long getId() {
     return id;
   }
 
@@ -60,5 +60,13 @@ public class Post {
 
   public int getScore() {
     return score;
+  }
+
+  public void upVote() {
+    score++;
+  }
+
+  public void downVote() {
+    score--;
   }
 }
