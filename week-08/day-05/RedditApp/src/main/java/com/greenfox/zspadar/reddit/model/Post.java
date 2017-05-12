@@ -1,9 +1,11 @@
 package com.greenfox.zspadar.reddit.model;
 
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.hibernate.annotations.UpdateTimestamp;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 12..
@@ -17,17 +19,18 @@ public class Post {
   String title;
   String href;
 
-  int timestamp;
+
+  Timestamp timestamp;
   int score;
 
   public Post() {
   }
 
-  public Post(int id, String title, String href, int timestamp, int score) {
-    this.id = id;
+
+  public Post(String title, String href, long timestamp, int score) {
     this.title = title;
     this.href = href;
-    this.timestamp = timestamp;
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = score;
   }
 
@@ -43,7 +46,7 @@ public class Post {
     return href;
   }
 
-  public int getTimestamp() {
+  public Timestamp getTimestamp() {
     return timestamp;
   }
 
