@@ -49,9 +49,16 @@ public class PostController {
   }
 
   @PutMapping(value = "posts/{id}/upvote")
-  public Post upvotePosts(@PathVariable("id") long id) {
+  public Post upVotePosts(@PathVariable("id") long id) {
     Post post = postRepository.findOne(id);
     post.upVote();
+    postRepository.save(post);
+    return post;
+  }
+  @PutMapping(value = "posts/{id}/downvote")
+  public Post downVotePosts(@PathVariable("id") long id) {
+    Post post = postRepository.findOne(id);
+    post.downVote();
     postRepository.save(post);
     return post;
   }
