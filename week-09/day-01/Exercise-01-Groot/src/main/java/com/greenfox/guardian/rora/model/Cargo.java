@@ -30,8 +30,6 @@ public class Cargo {
     return caliber30;
   }
 
-
-
   public int getCaliber50() {
     return caliber50;
   }
@@ -42,5 +40,17 @@ public class Cargo {
 
   public boolean isReady() {
     return ready;
+  }
+
+  public void setCaliber25(int caliber25) {
+    this.caliber25 = caliber25;
+  }
+
+  public void setCaliber30(int caliber30) {
+    this.caliber30 = caliber30;
+  }
+
+  public void setCaliber50(int caliber50) {
+    this.caliber50 = caliber50;
   }
 }

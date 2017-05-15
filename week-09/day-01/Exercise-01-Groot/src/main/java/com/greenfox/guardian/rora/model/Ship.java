@@ -23,7 +23,6 @@ public class Ship {
 
   }
 
-
   public String getReceived() {
     return received;
   }
