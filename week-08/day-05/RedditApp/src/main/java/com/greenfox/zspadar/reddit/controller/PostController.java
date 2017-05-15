@@ -30,15 +30,6 @@ public class PostController {
     return posts;
   }
 
-//  @PostMapping("/posts")
-//  public Posts getPosts(@RequestBody Post post) {
-//    Posts posts = new Posts();
-//    postRepository.save(post);
-//    Iterable<Post> repoPosts = postRepository.findAll();
-//    posts.setPosts(repoPosts);
-//    return posts;
-//  }
-
   @PostMapping(value = "/posts")
   public Post postPosts(@RequestBody Post post) {
     postRepository.save(post);
@@ -59,9 +50,5 @@ public class PostController {
     postRepository.save(post);
     return post;
   }
-
-
-
-
 
 }
