@@ -17,7 +17,6 @@ public class CargoController {
 
   @GetMapping(value = "/rocket")
   public Cargo getStatus() {
-    Cargo cargo = new Cargo();
     return cargo;
   }
 
