@@ -27,6 +27,7 @@ public class Ship {
     return received;
   }
 
+
   public int getAmount() {
     return amount;
   }

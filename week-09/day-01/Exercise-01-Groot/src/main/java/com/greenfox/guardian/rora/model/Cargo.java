@@ -57,4 +57,8 @@ public class Cargo {
   public void setShipstatus(String shipstatus) {
     this.shipstatus = shipstatus;
   }
+
+  public void setReady(boolean ready) {
+    this.ready = ready;
+  }
 }
