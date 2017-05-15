@@ -14,12 +14,14 @@ public class Ship {
 
   String received;
   int amount;
+  String shipstatus;
+  boolean ready;
 
   public Ship(String received, int amount) {
     this.received = received;
     this.amount = amount;
-    cargo.shipstatus = getPercentOfShipStatus();
-    cargo.ready = isReady();
+    this.shipstatus = cargo.getShipstatus();
+    this.ready = cargo.isReady();
 
   }
 

@@ -16,6 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -67,5 +68,15 @@ public class GuardianControllerTest {
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.error", is("I am Yondu!")));
   }
+
+  @Test
+  public void TestCargoStatusIsEmptyRora() throws Exception {
+    mockMvc.perform(get("/rocket"))
+        .andExpect(jsonPath("$.shipstatus", is("empty")))
+        .andExpect(jsonPath("$.ready", is(false)))
+        .andExpect(status().isOk());
+  }
+
+  
 
 }
