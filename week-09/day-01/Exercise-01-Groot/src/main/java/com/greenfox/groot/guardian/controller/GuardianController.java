@@ -1,6 +1,6 @@
 package com.greenfox.groot.guardian.controller;
 
-import com.greenfox.groot.guardian.exception.ExceptionController;
+import com.greenfox.groot.exception.ExceptionController;
 import com.greenfox.groot.guardian.model.Guardian;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
