@@ -2,6 +2,7 @@ package com.greenfox.guardian.rora.controller;
 
 import com.greenfox.guardian.rora.model.Cargo;
 import com.greenfox.guardian.rora.model.Ship;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

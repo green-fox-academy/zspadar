@@ -13,6 +13,7 @@ public class Cargo {
   String shipstatus;
   boolean ready;
 
+
   public Cargo() {
     this.caliber25 = 0;
     this.caliber30 = 0;
