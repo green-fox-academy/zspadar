@@ -53,4 +53,8 @@ public class Cargo {
   public void setCaliber50(int caliber50) {
     this.caliber50 = caliber50;
   }
+
+  public void setShipstatus(String shipstatus) {
+    this.shipstatus = shipstatus;
+  }
 }
