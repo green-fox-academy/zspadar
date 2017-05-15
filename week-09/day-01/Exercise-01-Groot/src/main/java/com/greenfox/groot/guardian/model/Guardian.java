@@ -1,4 +1,4 @@
-package com.greenfox.groot.model;
+package com.greenfox.groot.guardian.model;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 15..
