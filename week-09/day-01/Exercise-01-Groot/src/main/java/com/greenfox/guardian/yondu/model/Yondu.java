@@ -1,4 +1,4 @@
-package com.greenfox.groot.yondu.model;
+package com.greenfox.guardian.yondu.model;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 15..

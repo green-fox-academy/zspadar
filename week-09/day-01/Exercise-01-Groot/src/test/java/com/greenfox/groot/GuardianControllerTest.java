@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 
+import com.greenfox.guardian.GuardianApplication;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Created by zsuzsanna.padar on 2017. 05. 15..
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GrootApplication.class)
+@SpringBootTest(classes = GuardianApplication.class)
 @WebAppConfiguration
 @EnableWebMvc
 public class GuardianControllerTest {

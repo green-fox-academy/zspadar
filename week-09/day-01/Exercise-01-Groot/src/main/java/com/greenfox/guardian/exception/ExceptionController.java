@@ -1,4 +1,4 @@
-package com.greenfox.groot.exception;
+package com.greenfox.guardian.exception;
 
 /**
  * Created by zsuzsanna.padar on 2017. 05. 15..
