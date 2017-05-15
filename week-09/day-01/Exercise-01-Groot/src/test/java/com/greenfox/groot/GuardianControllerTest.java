@@ -1,15 +1,11 @@
 package com.greenfox.groot;
 
-import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 
-import java.awt.PageAttributes.MediaType;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,14 +37,14 @@ public class GuardianControllerTest {
   }
 
   @Test
-  public void statusIsOK() throws Exception {
+  public void statusIsOKGroot() throws Exception {
     mockMvc.perform(get("/groot?message=somemessage"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.received").value("somemessage"));
   }
 
   @Test
-  public void statusIsNotOk() throws Exception {
+  public void statusIsNotOkGroot() throws Exception {
     mockMvc.perform(get("/groot"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.error").value("I am Groot!"));
