@@ -10,9 +10,10 @@ public class Guardian {
   public Guardian() {
   }
 
-  public Guardian(String received, String translated) {
+
+  public Guardian(String received) {
     this.received = received;
-    this.translated = translated;
+    this.translated = "I am Groot!";
   }
 
   public String getReceived() {
@@ -22,5 +23,5 @@ public class Guardian {
   public String getTranslated() {
     return translated;
   }
-  
+
 }
