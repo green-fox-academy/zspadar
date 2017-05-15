@@ -16,4 +16,11 @@ public class CargoController {
     return cargo;
   }
 
+  @GetMapping(value = "/rocket/fill") {
+    public Cargo fillRocket() {
+      Cargo
+    }
+  }
+
+
 }

@@ -1,8 +1,11 @@
 package com.greenfox.guardian.rora.model;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Created by zsuzsanna.padar on 2017. 05. 15..
  */
+@Service
 public class Cargo {
   int caliber25;
   int caliber30;
@@ -25,6 +28,8 @@ public class Cargo {
   public int getCaliber30() {
     return caliber30;
   }
+
+
 
   public int getCaliber50() {
     return caliber50;
