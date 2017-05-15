@@ -1,5 +1,6 @@
 package com.greenfox.groot;
 
+import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -48,6 +49,15 @@ public class GuardianControllerTest {
     mockMvc.perform(get("/groot"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.error").value("I am Groot!"));
+  }
+
+  @Test
+  public void statusIsOkYondu() throws Exception {
+    mockMvc.perform(get("/yondu?distance=100.0&time=10.0"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.distance", is(100.0)))
+        .andExpect(jsonPath("$.time", is(10.0)))
+        .andExpect(jsonPath("$.speed", is(10.0)));
   }
 
 }
