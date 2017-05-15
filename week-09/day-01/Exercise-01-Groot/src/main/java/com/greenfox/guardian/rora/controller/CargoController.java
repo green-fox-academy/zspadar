@@ -1,7 +1,9 @@
 package com.greenfox.guardian.rora.controller;
 
 import com.greenfox.guardian.rora.model.Cargo;
+import com.greenfox.guardian.rora.model.Ship;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,10 +18,10 @@ public class CargoController {
     return cargo;
   }
 
-  @GetMapping(value = "/rocket/fill") {
-    public Cargo fillRocket() {
-      Cargo
-    }
+  @GetMapping(value = "/rocket/fill")
+    public Ship fillRocket(@RequestParam (value = "caliber") String received, @RequestParam(value = "amount") int amount) {
+      Ship ship = new Ship(received, amount);
+      return ship;
   }
 
 
