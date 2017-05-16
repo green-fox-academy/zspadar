@@ -35,6 +35,7 @@ public class Cargo {
   }
 
   public String getShipstatus() {
+
     return shipstatus;
   }
 

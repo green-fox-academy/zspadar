@@ -70,13 +70,34 @@ public class GuardianControllerTest {
   }
 
   @Test
-  public void TestCargoStatusIsEmptyRora() throws Exception {
+  public void testCargoStatusIsEmptyRora() throws Exception {
     mockMvc.perform(get("/rocket"))
         .andExpect(jsonPath("$.shipstatus", is("empty")))
         .andExpect(jsonPath("$.ready", is(false)))
         .andExpect(status().isOk());
   }
 
-  
+  @Test
+  public void testShipIsLoadedRora() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.30&amount=5000"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.shipstatus", is ("40%")))
+        .andExpect(jsonPath("$.ready", is (false)));
+  }
+
+  @Test
+  public void testWithOutParameterRora() throws Exception {
+    mockMvc.perform(get("/rocket/fill"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.error", is("Missing parameter.")));
+  }
+
+  @Test
+  public void testShipIsFullRora() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.30&amount=12500"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.shipstatus", is("full")))
+        .andExpect(jsonPath("$.ready", is(true)));
+  }
 
 }
