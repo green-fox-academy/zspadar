@@ -20,7 +20,7 @@ public class Ship {
   public Ship(String received, int amount) {
     this.received = received;
     this.amount = amount;
-    this.shipstatus = getPercentOfShipStatus();
+    this.shipstatus = getShipstatus();
     this.ready = cargo.isReady();
 
   }
@@ -42,7 +42,7 @@ public class Ship {
     }
   }
 
-  public String getPercentOfShipStatus () {
+  public String getShipstatus () {
     shipstatus = cargo.getShipstatus() + String.valueOf((amount * 100 / 12500)) + "%";
     return shipstatus;
   }

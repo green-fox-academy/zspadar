@@ -34,7 +34,7 @@ public class CargoController {
         cargo.setCaliber50(ship.getAmount() + amount);
       }
       if((cargo.getCaliber25() + cargo.getCaliber30() + cargo.getCaliber50()) < 12500) {
-        cargo.setShipstatus(ship.getPercentOfShipStatus());
+        cargo.setShipstatus(ship.getShipstatus());
       } else if ((cargo.getCaliber25() + cargo.getCaliber30() + cargo.getCaliber50()) == 12500) {
         cargo.setShipstatus("full");
       } else if ((cargo.getCaliber25() + cargo.getCaliber30() + cargo.getCaliber50()) > 12500) {
