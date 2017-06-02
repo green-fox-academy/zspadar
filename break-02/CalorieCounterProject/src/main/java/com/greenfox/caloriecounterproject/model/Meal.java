@@ -22,14 +22,14 @@ public class Meal {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
   LocalDate mealDate;
-  private MealType type;
+  private String type;
   private String description;
   private double calories;
 
   public Meal() {
   }
 
-  public Meal(MealType type, String description, double calories) {
+  public Meal(String type, String description, double calories) {
     this.id = id;
     this.mealDate = LocalDate.now();
     this.type = type;
@@ -37,7 +37,7 @@ public class Meal {
     this.calories = calories;
   }
 
-  public Meal(LocalDate mealDate, MealType type, String description, double calories) {
+  public Meal(LocalDate mealDate, String type, String description, double calories) {
     this.mealDate = mealDate;
     this.type = type;
     this.description = description;

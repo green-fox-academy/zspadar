@@ -23,12 +23,21 @@ public class CaloriecounterprojectApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		mealRepository.save(new Meal(,"Lovely ham and eggs", 243.50));
-		mealRepository.save(new Meal(, "Banana", 111));
-		mealRepository.save(new Meal(, "Fried Octopus", 234.6));
-		mealRepository.save(new Meal(, "chips with lemonade", 256.76));
-		mealRepository.save(new Meal(, "Silence of the  lambs", 1250));
-		mealRepository.save(new Meal(, "Bloody Mary", 254));
+		mealTypeRepository.save(new MealType("Breakfast"));
+		mealTypeRepository.save(new MealType("Elevenses"));
+		mealTypeRepository.save(new MealType("Lunch"));
+		mealTypeRepository.save(new MealType("Snack"));
+		mealTypeRepository.save(new MealType("Dinner"));
+		mealTypeRepository.save(new MealType("Midnight Snack"));
+
+
+
+		mealRepository.save(new Meal("Breakfast","Lovely ham and eggs", 243.50));
+		mealRepository.save(new Meal("Elevenses", "Banana", 111));
+		mealRepository.save(new Meal("Lunch", "Fried Octopus", 234.6));
+		mealRepository.save(new Meal("Snack", "chips with lemonade", 256.76));
+		mealRepository.save(new Meal("Dinner", "Silence of the  lambs", 1250));
+		mealRepository.save(new Meal("Midnight Snack", "Bloody Mary", 254));
 	}
 
 }

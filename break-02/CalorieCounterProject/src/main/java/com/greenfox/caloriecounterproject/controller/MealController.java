@@ -1,8 +1,10 @@
 package com.greenfox.caloriecounterproject.controller;
 
 import com.greenfox.caloriecounterproject.model.Meal;
+import com.greenfox.caloriecounterproject.model.MealType;
 import com.greenfox.caloriecounterproject.model.Statistic;
 import com.greenfox.caloriecounterproject.repository.MealRepository;
+import com.greenfox.caloriecounterproject.repository.MealTypeRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ public class MealController {
   @Autowired
   MealRepository mealRepository;
 
+  @Autowired
+  MealTypeRepository mealTypeRepository;
+
   @GetMapping(value = "/")
   public String showIndexPage(Model model) {
     List<Meal> meals = (List<Meal>) mealRepository.findAll();
@@ -30,7 +35,9 @@ public class MealController {
   }
 
   @GetMapping(value = "/add")
-  public String showAddableMeals() {
+  public String showAddableMeals(Model model) {
+    List<MealType> mealTypes = (List<MealType>) mealTypeRepository.findAll();
+    model.addAttribute("mealTypes", mealTypes);
     return "addOrEdit";
   }
 

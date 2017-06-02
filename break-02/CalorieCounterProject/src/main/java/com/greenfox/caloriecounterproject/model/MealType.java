@@ -23,4 +23,8 @@ public class MealType {
 
   public MealType() {
   }
+
+  public MealType(String type) {
+    this.type = type;
+  }
 }

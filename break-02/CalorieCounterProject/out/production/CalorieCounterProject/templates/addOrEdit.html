@@ -24,7 +24,9 @@
       <tr>
         <td>Type</td>
         <td>
-          <select></select>
+          <select name="type">
+            <option th:each="type : ${mealTypes}" th:text="${type.type}" th:value="${type.type}">type</option>
+          </select>
         </td>
       </tr>
       <tr>
