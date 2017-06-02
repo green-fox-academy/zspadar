@@ -6,26 +6,26 @@
 </head>
 <body>
   <h1>Add or edit</h1>
-  <h2 th:text="${action}">Action</h2>
+  <p th:if="${!errors.equals('')}" th:text="${'These fields are required: ' + errors}">Errors</p>
   <form method="post">
     <table>
       <tr>
         <td>Date</td>
-        <td><input name="date" /></td>
+        <td><input name="date" th:value="${meal.mealDate}" /></td>
       </tr>
       <tr>
         <td>Calories</td>
-        <td><input name="calories" /></td>
+        <td><input name="calories" th:value="${meal.calories}" /></td>
       </tr>
       <tr>
         <td>Description</td>
-        <td><input name="description" /></td>
+        <td><input name="description" th:value="${meal.description}" /></td>
       </tr>
       <tr>
         <td>Type</td>
         <td>
           <select name="type">
-            <option th:each="type : ${mealTypes}" th:text="${type.type}" th:value="${type.type}">type</option>
+            <option th:each="type : ${mealTypes}" th:text="${type.type}" th:value="${type.type}" th:selected="(${type.type == meal.type})">type</option>
           </select>
         </td>
       </tr>

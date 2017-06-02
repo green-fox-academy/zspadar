@@ -5,14 +5,13 @@ import com.greenfox.caloriecounterproject.model.MealType;
 import com.greenfox.caloriecounterproject.model.Statistic;
 import com.greenfox.caloriecounterproject.repository.MealRepository;
 import com.greenfox.caloriecounterproject.repository.MealTypeRepository;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+\import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -34,37 +33,79 @@ public class MealController {
     return "index";
   }
 
-  @GetMapping(value = "/add")
-  public String showAddableMeals(Model model) {
+  @GetMapping(value = "/addEdit")
+  public String showAddableMeals(Model model, @RequestParam(value = "id", required = true, defaultValue = "0") String id) {
     List<MealType> mealTypes = (List<MealType>) mealTypeRepository.findAll();
     model.addAttribute("mealTypes", mealTypes);
+
+    Meal meal;
+
+    model.addAttribute("id", id);
+    if (id.equals("0")) {
+      meal = new Meal();
+    } else {
+      meal = mealRepository.findOne(Long.parseLong(id));
+    }
+
+    model.addAttribute("meal", meal);
+
+    model.addAttribute("errors", "");
+
     return "addOrEdit";
   }
 
-  @PostMapping(value = "/add")
+  @PostMapping(value = "/addEdit")
   public String addMeals(Model model,
       @RequestParam(value = "cancel", required = true, defaultValue = "") String cancel,
+      @RequestParam("id") String id,
       @RequestParam("date") String date,
       @RequestParam("calories") String calories,
+      @RequestParam("type") String type,
       @RequestParam("description") String description) {
 
+    List<String> errors = new ArrayList<>();
+
+    List<MealType> mealTypes = (List<MealType>) mealTypeRepository.findAll();
+    model.addAttribute("mealTypes", mealTypes);
+
+    Meal meal;
+    if (id.equals("0")) {
+      meal = new Meal();
+    } else {
+      meal = mealRepository.findOne(Long.parseLong(id));
+    }
+    meal.setType(type);
+    meal.setCalories(calories);
+    meal.setDescription(description);
+    meal.setMealDate(date);
+
+    System.out.println(String.format("calories: %s, setted: %f", calories, meal.getCalories()));
+
+    if (meal.getCalories() == 0.0) {
+      errors.add("calories");
+    }
+    if (meal.getMealDate().equals("")) {
+      errors.add("date");
+    }
+
     if (cancel.equals("")) {
-      return "addOrEdit";
+      if (errors.size() == 0) {
+        // save it
+        mealRepository.save(meal);
+        return "redirect:/";
+      } else {
+        model.addAttribute("meal", meal);
+        model.addAttribute("errors", String.join(", ", errors));
+        return "addOrEdit";
+      }
     } else {
       return "redirect:/";
     }
-
-
-//
-//
-//    mealRepository.save(new Meal(date, type, description, calories));
-//    model.addAttribute("newMeal", mealRepository);
-//    return "redirect:/";
   }
 
-  @DeleteMapping(value = "/delete?id")
-  public String deleteMeal(@PathVariable("id") long id) {
-    mealRepository.delete(id);
+  @GetMapping(value = "/delete")
+  public String deleteMeal(@RequestParam("id") String id) {
+    mealRepository.delete(Long.parseLong(id));
     return "redirect:/";
   }
 

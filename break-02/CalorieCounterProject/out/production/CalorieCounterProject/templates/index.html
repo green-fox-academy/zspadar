@@ -3,7 +3,7 @@
 <head>
   <title>Calorie Counter Program</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <li><a href="/add" >Add new meal</a></li>
+  <li><a th:href="@{/addEdit}" >Add new meal</a></li>
 </head>
 <body>
 
@@ -13,17 +13,12 @@
 <caption>You are what you eat!</caption>
 <table>
   <tr>
-    <th th:colspan="5"> Meal Information </th>
-    <th colspan="2">Functions</th>
-  </tr>
-  <tr>
     <th>ID</th>
     <th>Meal Date</th>
     <th>Type</th>
     <th>Description</th>
     <th>Calories</th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th>Actions</th>
   </tr>
   <tr th:each="meal : ${yourMeals}">
     <td th:text="${meal.id}"></td>
@@ -32,14 +27,8 @@
     <td th:text="${meal.description}"></td>
     <td th:text="${meal.calories}"></td>
     <td>
-      <form th:action="@{/add}" th:object="${meal}" th:method="post">
-        <input th:type="submit" th:value="Edit"/>
-      </form>
-    </td>
-    <td>
-      <form th:action="@{/delete}" th:object="${meal}" th:method="post">
-        <input th:type="submit" th:value="Delete"/>
-      </form>
+      <a th:href="${'/addEdit?id=' + meal.id}">Edit</a>
+      <a th:href="${'/delete?id=' + meal.id}">Delete</a>
     </td>
   </tr>
 </table>
