@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Calorie Counter Program</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+  <h1>Add or edit</h1>
+  <h2 th:text="${action}">Action</h2>
+  <form method="post">
+    <table>
+      <tr>
+        <td>Date</td>
+        <td><input name="date" /></td>
+      </tr>
+      <tr>
+        <td>Calories</td>
+        <td><input name="calories" /></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><input name="description" /></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td>
+          <select></select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <a th:href="@{/}">Cancel</a>
+          <input type="submit" name="action" value="Save" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

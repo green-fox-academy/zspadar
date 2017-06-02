@@ -32,15 +32,30 @@ public class MealController {
     return "index";
   }
 
+  @GetMapping(value = "/add")
+  public String showAddableMeals() {
+    return "addOrEdit";
+  }
+
   @PostMapping(value = "/add")
   public String addMeals(Model model,
-      @RequestParam("Date") LocalDate date,
-      @RequestParam("Type") MealType type,
-      @RequestParam("Description") String description,
-      @RequestParam("Calories") double calories) {
-    mealRepository.save(new Meal(date, type, description, calories));
-    model.addAttribute("newMeal", mealRepository);
-    return "redirect:/";
+      @RequestParam(value = "cancel", required = true, defaultValue = "") String cancel,
+      @RequestParam("date") String date,
+      @RequestParam("calories") String calories,
+      @RequestParam("description") String description) {
+
+    if (cancel.equals("")) {
+      return "addOrEdit";
+    } else {
+      return "redirect:/";
+    }
+
+
+//
+//
+//    mealRepository.save(new Meal(date, type, description, calories));
+//    model.addAttribute("newMeal", mealRepository);
+//    return "redirect:/";
   }
 
   @DeleteMapping(value = "/delete?id")

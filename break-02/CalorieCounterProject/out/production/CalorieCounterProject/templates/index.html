@@ -37,7 +37,7 @@
       </form>
     </td>
     <td>
-      <form th:action="@{/delete}" th:object="${meal}" th:method="delete">
+      <form th:action="@{/delete}" th:object="${meal}" th:method="post">
         <input th:type="submit" th:value="Delete"/>
       </form>
     </td>
