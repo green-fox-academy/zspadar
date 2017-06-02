@@ -1,11 +1,8 @@
 package com.greenfox.caloriecounterproject.controller;
 
 import com.greenfox.caloriecounterproject.model.Meal;
-import com.greenfox.caloriecounterproject.model.MealType;
 import com.greenfox.caloriecounterproject.model.Statistic;
 import com.greenfox.caloriecounterproject.repository.MealRepository;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

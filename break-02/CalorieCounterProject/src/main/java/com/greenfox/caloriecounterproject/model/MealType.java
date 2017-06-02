@@ -1,29 +1,26 @@
 package com.greenfox.caloriecounterproject.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
-
+import lombok.Setter;
 
 /**
  * Created by zsuzsanna.padar on 2017. 06. 02..
  */
-//@Entity
-//@Table(name = "MealType")
+@Entity
+@Table(name = "mealType")
 @Getter
-public enum MealType {
-  BREAKFAST("Breakfast"),
-  ELEVENSES("Elevenses"),
-  LUNCH("Lunch"),
-  SNACK("Snack"),
-  DINNER("Dinner"),
-  MIDNIGHT_SNACK("Midnight Snack");
+@Setter
+public class MealType {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
+  private String type;
 
-  private final String value;
-
-  private MealType (String value) {
-    this.value = value;
+  public MealType() {
   }
-
-
 }
