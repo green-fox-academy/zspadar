@@ -1,13 +1,20 @@
 package com.greenfox.caloriecounterproject.controller;
 
 import com.greenfox.caloriecounterproject.model.Meal;
+import com.greenfox.caloriecounterproject.model.MealType;
 import com.greenfox.caloriecounterproject.model.Statistic;
 import com.greenfox.caloriecounterproject.repository.MealRepository;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by zsuzsanna.padar on 2017. 06. 02..
@@ -24,5 +31,24 @@ public class MealController {
     model.addAttribute("statistic",new Statistic(meals));
     return "index";
   }
+
+  @PostMapping(value = "/add")
+  public String addMeals(Model model,
+      @RequestParam("Date") LocalDate date,
+      @RequestParam("Type") MealType type,
+      @RequestParam("Description") String description,
+      @RequestParam("Calories") double calories) {
+    mealRepository.save(new Meal(date, type, description, calories));
+    model.addAttribute("newMeal", mealRepository);
+    return "redirect:/";
+  }
+
+  @DeleteMapping(value = "/delete?id")
+  public String deleteMeal(@PathVariable("id") long id) {
+    mealRepository.delete(id);
+    return "redirect:/";
+  }
+
+
 
 }
