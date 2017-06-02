@@ -31,18 +31,17 @@
     <td th:text="${meal.type}"></td>
     <td th:text="${meal.description}"></td>
     <td th:text="${meal.calories}"></td>
+    <td>
+      <form th:action="@{/add}" th:object="${meal}" th:method="post">
+        <input th:type="submit" th:value="Edit"/>
+      </form>
+    </td>
+    <td>
+      <form th:action="@{/delete}" th:object="${meal}" th:method="delete">
+        <input th:type="submit" th:value="Delete"/>
+      </form>
+    </td>
   </tr>
-  <tr>
-    <form th:action="@{/add}" th:object="${meal}" th:method="post">
-      <input th:type="submit" th:value="Edit"/>
-    </form>
-  </tr>
-  <tr>
-    <form th:action="@{/delete}" th:object="${meal}" th:method="post">
-      <input th:type="submit" th:value="Delete"/>
-    </form>
-  </tr>
-
 </table>
 </body>
 </html>
