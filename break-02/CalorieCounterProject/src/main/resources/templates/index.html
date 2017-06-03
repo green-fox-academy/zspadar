@@ -3,11 +3,11 @@
 <head>
   <title>Calorie Counter Program</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <li><a th:href="@{/addEdit}" >Add new meal</a></li>
 </head>
 <body>
 
 <h1>Calorie Counter Program</h1>
+<a th:href="@{/addEdit}">+ Add new meal</a>
 <p>Number of meals: <span th:text="${statistic.mealNumber}" ></span> </p>
 <p>Total Calories: <span th:text="${statistic.totalCalories}"></span></p>
 <caption>You are what you eat!</caption>
@@ -27,8 +27,8 @@
     <td th:text="${meal.description}"></td>
     <td th:text="${meal.calories}"></td>
     <td>
-      <a th:href="${'/addEdit?id=' + meal.id}">Edit</a>
-      <a th:href="${'/delete?id=' + meal.id}">Delete</a>
+      <a th:href="@{/addEdit(id=${meal.id})}">Edit</a>
+      <a th:href="@{/delete(id=${meal.id})}">Delete</a>
     </td>
   </tr>
 </table>
