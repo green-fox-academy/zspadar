@@ -28,8 +28,8 @@ public class MealController {
   @GetMapping(value = "/")
   public String showIndexPage(Model model) {
     List<Meal> meals = (List<Meal>) mealRepository.findAll();
-    model.addAttribute("yourMeals",meals);
-    model.addAttribute("statistic",new Statistic(meals));
+    model.addAttribute("yourMeals", meals);
+    model.addAttribute("statistic", new Statistic(meals));
     return "index";
   }
 
@@ -57,7 +57,7 @@ public class MealController {
   @PostMapping(value = "/addEdit")
   public String addMeals(Model model,
       @RequestParam(value = "cancel", required = true, defaultValue = "") String cancel,
-      @RequestParam("id") String id,
+      @RequestParam(value = "id", required = true, defaultValue = "0") String id,
       @RequestParam("date") String date,
       @RequestParam("calories") String calories,
       @RequestParam("type") String type,
@@ -79,8 +79,6 @@ public class MealController {
     meal.setDescription(description);
     meal.setMealDate(date);
 
-    System.out.println(String.format("calories: %s, setted: %f", calories, meal.getCalories()));
-
     if (meal.getCalories() == 0.0) {
       errors.add("calories");
     }
@@ -88,18 +86,13 @@ public class MealController {
       errors.add("date");
     }
 
-    if (cancel.equals("")) {
-      if (errors.size() == 0) {
-        // save it
-        mealRepository.save(meal);
-        return "redirect:/";
-      } else {
-        model.addAttribute("meal", meal);
-        model.addAttribute("errors", String.join(", ", errors));
-        return "addOrEdit";
-      }
-    } else {
+    if (errors.size() == 0) {
+      mealRepository.save(meal);
       return "redirect:/";
+    } else {
+      model.addAttribute("meal", meal);
+      model.addAttribute("errors", String.join(", ", errors));
+      return "addOrEdit";
     }
   }
 
