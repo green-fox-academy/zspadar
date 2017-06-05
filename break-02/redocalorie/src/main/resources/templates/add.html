@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head> 
+  <title>Calorie Counter Redo</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</head> 
+<body>  
+<h1>Calorie Counter</h1>
+<p th:if="${!(errors.equals(''))}" th:text="'These are the missing field(s): ' + ${errors} "></p>
+<form method="post">
+  <table>
+    <tr>
+      <td>Date</td>
+      <td><input th:name="date" th:value="${meal.date}"/></td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>
+        <select th:name="type">
+          <option th:each="type :${mealType}"
+                  th:text="${type.type}"
+                  th:value="${type.type}"
+                  th:selected="${type.type == meal.type}">
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input th:name="description" th:value="${meal.description}"/></td>
+    </tr>
+    <tr>
+      <td>Calories</td>
+      <td><input th:name="calories" th:value="${meal.calories}"/></td>
+    </tr>
+    <tr>
+      <td th:colspan="2">
+        <a th:href="@{/}">Cancel</a>
+        <button th:type="submit">Save</button>
+      </td>
+    </tr>
+  </table>
+</form>
+</body> 
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head> 
+  <title>Calorie Counter Redo</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</head> 
+<body>  
+<h1>Calorie Counter</h1>
+<p> Number of meals: <span th:text="${statistics.numberOfMeals}"></span></p>
+<p> Total calories: <span th:text="${statistics.totalCalories}"></span></p>
+<p><a th:href="@{/add}">+Add a new meal</a></p>
+<caption> Eat well, code well!</caption>
+<table>
+  <tr>
+    <td>DATE</td>
+    <td>MEAL TYPE</td>
+    <td>DESCRIPTION</td>
+    <td>CALORIE</td>
+    <td>FUNCTION</td>
+  </tr>
+  <tr th:each="meal : ${meals}">
+    <td th:text="${meal.date}"></td>
+    <td th:text="${meal.type}"></td>
+    <td th:text="${meal.description}"></td>
+    <td  th:text="${meal.calories}"></td>
+    <td th:colspan="2">
+      <a th:href="@{/edit(id=${meal.id})}">Edit</a>
+      <a th:href="@{/delete(id=${meal.id})}">Delete</a>
+    </td>
+  </tr>
+</table>
+</body> 
+</html>
