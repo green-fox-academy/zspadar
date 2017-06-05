@@ -29,9 +29,11 @@ public class Response {
     return result;
   }
 
-  public int[] doubleIt(int[] numbers) {
-    re
+  public int[] doubleIt(int[] i) {
+    result = new int[i.length];
   }
+
+
 
 
 }
