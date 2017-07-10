@@ -22,4 +22,10 @@ public class FifteenTest {
     assertEquals(expected, Fifteen.splitStringToTwoChars(testInput));
   }
 
+  @Test
+  public void testSplitStringToTwoWithOddString() throws Exception {
+    String testInput2 = "abcde";
+    List<String> expectedWithOdd = Arrays.asList("ab", "cd");
+    assertEquals(expectedWithOdd, Fifteen.splitStringToTwoChars(testInput2));
+  }
 }
