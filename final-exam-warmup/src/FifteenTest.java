@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,5 +28,12 @@ public class FifteenTest {
     String testInput2 = "abcde";
     List<String> expectedWithOdd = Arrays.asList("ab", "cd");
     assertEquals(expectedWithOdd, Fifteen.splitStringToTwoChars(testInput2));
+  }
+
+  @Test
+  public void testSplitStringToTwoWithEmptyString() throws Exception {
+    String testInput3 = "";
+    List<String> expectedWithEmptyInput = new ArrayList<>();
+    assertEquals(expectedWithEmptyInput, Fifteen.splitStringToTwoChars(testInput3));
   }
 }
