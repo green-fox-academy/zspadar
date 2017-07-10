@@ -17,23 +17,23 @@ public class FifteenTest {
   }
 
   @Test
-  public void testSplitStringToTwoCharsWithEvenString() throws Exception {
+  public void testSplitStringToTwoLettersWithEvenString() throws Exception {
     String testInput = "abcdef";
     List<String> expected = Arrays.asList("ab", "cd", "ef");
-    assertEquals(expected, Fifteen.splitStringToTwoChars(testInput));
+    assertEquals(expected, Fifteen.splitStringToTwoLetters(testInput));
   }
 
   @Test
-  public void testSplitStringToTwoWithOddString() throws Exception {
+  public void testSplitStringToTwoLettersWithOddString() throws Exception {
     String testInput2 = "abcde";
     List<String> expectedWithOdd = Arrays.asList("ab", "cd");
-    assertEquals(expectedWithOdd, Fifteen.splitStringToTwoChars(testInput2));
+    assertEquals(expectedWithOdd, Fifteen.splitStringToTwoLetters(testInput2));
   }
 
   @Test
-  public void testSplitStringToTwoWithEmptyString() throws Exception {
+  public void testSplitStringToTwoLettersWithEmptyString() throws Exception {
     String testInput3 = "";
     List<String> expectedWithEmptyInput = new ArrayList<>();
-    assertEquals(expectedWithEmptyInput, Fifteen.splitStringToTwoChars(testInput3));
+    assertEquals(expectedWithEmptyInput, Fifteen.splitStringToTwoLetters(testInput3));
   }
 }

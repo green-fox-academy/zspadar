@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Fifteen {
   public static void main(String[] args) {
-    System.out.println(splitStringToTwoChars("abcdef"));
+    System.out.println(splitStringToTwoLetters("abcdef"));
   }
 
-  public static List<String> splitStringToTwoChars(String input) {
+  public static List<String> splitStringToTwoLetters(String input) {
     String tempWord = "";
     int tempNumber = 0;
     List<String> splittedList = new ArrayList<>();
